@@ -1,7 +1,7 @@
 <img src="./logo.svg" align="right" width="200" alt="header pic"/>
 
 # PyPolo
-PyPolo is a Python library for research and education on **information-driven learning and planning**.
+PyPolo is a Python library for **information-driven learning and planning**.
 
 # Features
 1. **Minimum dependency** &rarr; painless algorithm prototyping and educatioan &rarr; ~~Robot Operating System (ROS)~~.
