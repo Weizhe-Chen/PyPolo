@@ -4,7 +4,7 @@
 PyPolo is a Python library for **information-driven learning and planning**.
 
 # Features
-1. **Minimum dependency** &rarr; painless algorithm prototyping and educatioan &rarr; ~~Robot Operating System (ROS)~~.
+1. **Minimum dependency** &rarr; painless algorithm prototyping and education &rarr; ~~Robot Operating System (ROS)~~.
 2. **Readable code, detailed documentation, interactive tutorials** &rarr; easier understanding of the algorithms.
 3. **Modular implementation** &rarr; develop new algorithm in the module of your interest.
 
