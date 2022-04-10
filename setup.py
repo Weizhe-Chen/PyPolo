@@ -54,9 +54,6 @@ setup(
     },
     test_suite="test",
     classifiers=[
-        "Development Status :: 1 - Beta",
-        'Intended Audience :: Science and Engineering',
-        'Intended Audience :: Education',
         'License :: OSI Approved :: MIT License',
         "Programming Language :: Python :: 3",
     ],
