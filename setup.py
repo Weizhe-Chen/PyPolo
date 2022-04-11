@@ -48,7 +48,7 @@ setup(
     install_requires=install_requires,
     extras_require={
         "dev": ["yapf"],
-        "docs": ["ipython", "ipykernel", "sphinx<3.0.0", "sphinx_rtd_theme", "nbsphinx", "m2r"],
+        "docs": ["sphinx"],
         "examples": ["ipython", "jupyter", "matplotlib", "tqdm", "ConfigArgParse"],
         "test": ["pytest"],
     },

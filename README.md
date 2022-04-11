@@ -1,4 +1,4 @@
-<img src="./logo.svg" align="right" width="200" alt="header pic"/>
+<img src="https://raw.githubusercontent.com/Weizhe-Chen/pypolo/main/logo.svg" align="right" width="200" alt="header pic"/>
 
 # PyPolo
 PyPolo is a Python library for **information-driven learning and planning**.
