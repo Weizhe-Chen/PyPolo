@@ -18,13 +18,11 @@ Welcome to PyPolo's documentation!
    :caption: User Documentation
 
    user/introduction
+   user/installation
+   user/tutorials
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Introduction to IPL
 
-.. Features
-.. --------
-..
-.. 1. We would like to keep **minimum dependency** for painless algorithm prototyping and education. Yep, that means this is a pure-python project and will not depend on `Robot Operating System (ROS) <https://www.ros.org/>`_. We try to make the implementation directly applicable to ROS though.
-.. 2. We maintain **readable code, detailed documentation, interactive tutorials** for easier learning and understanding of the library usage and algorithms.
-.. 3. We keep **modular design** in mind so that you can develop new algorithm in the specific module of your interest. You are more than welcome to contribute your algorithm to this project! We also expect some modules to be also useful in other projects.
-..
-..
+   ipl/introduction

@@ -39,7 +39,7 @@ setup(
     version=version,
     author="Weizhe (Wesley) Chen",
     author_email="chenweiz@iu.edu",
-    description="A library for research and education on information-driven learning and planning",
+    description="A library for informative planning and learning",
     long_description=readme,
     long_description_content_type="text/markdown",
     url="https://github.com/Weizhe-Chen/pypolo",
