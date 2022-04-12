@@ -11,10 +11,10 @@ sphinx:
   fail_on_warning: true
 
 # Optionally build your docs in additional formats such as PDF
-formats:
-  - pdf
-  - htmlzip
-  - epub
+# formats:
+#   - pdf
+#   - htmlzip
+#   - epub
 
 # Optionally set the version of Python and requirements required to build your docs
 python:
