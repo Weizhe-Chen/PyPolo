@@ -5,6 +5,7 @@ from . import kernels
 from . import models
 from . import robots
 from . import strategies
+from . import experiments
 
 __all__= [
     "objectives",
@@ -14,4 +15,5 @@ __all__= [
     "models",
     "robots",
     "strategies",
+    "experiments",
 ]
