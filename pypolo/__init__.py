@@ -1,1 +1,5 @@
-__version__ = "0.0.0"
+from . import objectives
+
+__all__= [
+    "objectives"
+]
