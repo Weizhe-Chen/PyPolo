@@ -4,6 +4,7 @@ from . import utilities
 from . import kernels
 from . import models
 from . import robots
+from . import sensors
 from . import strategies
 from . import experiments
 
@@ -14,6 +15,7 @@ __all__= [
     "kernels",
     "models",
     "robots",
+    "sensors",
     "strategies",
     "experiments",
 ]
