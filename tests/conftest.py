@@ -3,6 +3,7 @@ import pytest
 
 from pypolo.dynamics import DubinsCar
 from pypolo.utilities import GridMap
+from pypolo.kernels import RBF
 
 
 @pytest.fixture(scope="module")
@@ -16,3 +17,7 @@ def grid_map() -> GridMap:
     rows, cols = np.ogrid[0:6, 0:7]
     env = rows + cols
     return GridMap(matrix=env, extent=extent)
+
+@pytest.fixture(scope="module")
+def rbf() -> RBF:
+    return RBF(amplitude=1.0, lengthscale=1.0)
