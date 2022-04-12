@@ -65,3 +65,14 @@ def sonar() -> Sonar:
     rows, cols = np.ogrid[0:6, 0:7]
     env = rows + cols
     return Sonar(rate=1.0, env=env, env_extent=extent, noise_scale=0.1)
+
+from pypolo.robots import USV
+@pytest.fixture(scope="module")
+def usv() -> USV:
+    init_state = np.array([0, 0, 0], dtype=np.float64)
+    usv = USV(init_state=init_state,
+              control_rate=10.0,
+              max_lin_vel=1.0,
+              tolerance=0.1,
+              sampling_rate=1.0)
+    return usv

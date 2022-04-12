@@ -3,6 +3,7 @@ from . import dynamics
 from . import utilities
 from . import kernels
 from . import models
+from . import robots
 
 __all__= [
     "objectives",
@@ -10,4 +11,5 @@ __all__= [
     "utilities",
     "kernels",
     "models",
+    "robots",
 ]
