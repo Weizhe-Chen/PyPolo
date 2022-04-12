@@ -4,6 +4,7 @@ from . import utilities
 from . import kernels
 from . import models
 from . import robots
+from . import strategies
 
 __all__= [
     "objectives",
@@ -12,4 +13,5 @@ __all__= [
     "kernels",
     "models",
     "robots",
+    "strategies",
 ]
