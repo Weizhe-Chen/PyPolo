@@ -7,7 +7,7 @@ Informative Planning and Learning (IPL)
 What is IPL?
 ================
 
-What Can IPL DO?
+What Can IPL Do?
 ================
 
 Key Concepts and Terminology
