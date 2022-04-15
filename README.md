@@ -3,6 +3,8 @@
 # PyPolo
 PyPolo is a Python library for **informative planning and learning**.
 
+This library is a work-in-progress, but I am planning to complete the basic functionalities in the following weeks. Stay tuned! Also, feel free to shoot me an email (chenweiz[AT]iu[DOT]edu) if you feel like building  PyPolo together!
+
 # Features
 1. **Minimum dependency** &rarr; painless algorithm prototyping and education &rarr; ~~Robot Operating System (ROS)~~.
 2. **Readable code, detailed documentation, interactive tutorials** &rarr; easier understanding of the algorithms.
