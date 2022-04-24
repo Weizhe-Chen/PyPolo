@@ -23,8 +23,8 @@ class DataLoader:
         self.read_data()
         print(f"Successfully read data from {self.data_path}")
         print(f"Array \tshape:\t{self.array.shape}")
-        print(f"\tmin:\t{self.array.min()}")
-        print(f"\tmax:\t{self.array.max()}")
+        print(f"\tmin:\t{self.array.min(): .2f}")
+        print(f"\tmax:\t{self.array.max(): .2f}")
         print(f"\tdtype:\t{self.array.dtype}\n")
 
     def read_data(self) -> None:
