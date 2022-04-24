@@ -145,8 +145,6 @@ class GPR(IModel):
             if self.opt_nn is not None:
                 self.opt_nn.step()
             if verbose:
-                #  avg_loss = loss.item() / self.num_train
-                #  print(f"Iter: {i:02d} Loss: {avg_loss: .4f}")
                 print(f"Iter: {i:02d} Loss: {loss.item(): .4f}")
             if writer is not None:
                 writer.add_scalar('loss', loss.item(), i)
@@ -188,7 +186,7 @@ class GPR(IModel):
             L, iK_y = self.compute_common()
             Ksn = self.kernel(_x_test, self._x_train)
             Kss_diag = self.kernel.diag(_x_test)
-            iL_Kns = torch.triangular_solve(Ksn.t(), L, upper=False)[0]
+            iL_Kns = torch.linalg.solve_triangular(L, Ksn.t(), upper=False)
             _mean = Ksn @ iK_y
             var = Kss_diag - iL_Kns.square().sum(0).view(-1, 1)
             # TODO: variance might be zero when lengthscale is too large.
