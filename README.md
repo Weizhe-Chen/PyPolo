@@ -16,3 +16,9 @@ This library is a work-in-progress, but I am planning to complete the basic func
 * Python >= 3.6 
 * PyTorch >= 1.10.2 (NumPy included)
 * Matplotlib
+
+```bash
+conda create -n pypolo python=3.8
+conda activate pypolo
+pip install -e .
+```

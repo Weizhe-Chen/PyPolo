@@ -8,6 +8,8 @@ from . import sensors
 from . import strategies
 from . import experiments
 
+__version__ = "0.0.1"
+
 __all__= [
     "objectives",
     "dynamics",
