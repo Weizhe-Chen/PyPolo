@@ -32,6 +32,7 @@ install_requires = [
     "scipy",
     "scikit-image",
     "configargparse",
+    "SciencePlots",
 ]
 try:
     import torch
