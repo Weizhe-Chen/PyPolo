@@ -25,7 +25,14 @@ version = find_version("pypolo", "__init__.py")
 
 
 torch_min = "1.10"
-install_requires = [">=".join(["torch", torch_min]), "matplotlib"]
+install_requires = [
+    ">=".join(["torch", torch_min]), 
+    "matplotlib",
+    "bezier",
+    "scipy",
+    "scikit-image",
+    "configargparse",
+]
 try:
     import torch
 
