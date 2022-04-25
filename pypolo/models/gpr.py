@@ -2,6 +2,7 @@ from typing import Tuple
 
 import numpy as np
 import torch
+from tqdm import tqdm
 
 from ..kernels import IKernel
 from ..utilities import linalg
@@ -135,7 +136,10 @@ class GPR(IModel):
 
         """
         self.train()
-        for i in range(num_iter):
+        pbar = range(num_iter)
+        if verbose:
+            pbar = tqdm(pbar)
+        for i in pbar:
             self.opt_hyper.zero_grad()
             if self.opt_nn is not None:
                 self.opt_nn.zero_grad()
@@ -145,7 +149,7 @@ class GPR(IModel):
             if self.opt_nn is not None:
                 self.opt_nn.step()
             if verbose:
-                print(f"Iter: {i:02d} Loss: {loss.item(): .4f}")
+                pbar.set_description(f"Iter: {i:02d} loss: {loss.item(): .2f}")
             if writer is not None:
                 writer.add_scalar('loss', loss.item(), i)
                 for name, param in self.named_parameters():

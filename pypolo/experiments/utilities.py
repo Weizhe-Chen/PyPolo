@@ -41,7 +41,6 @@ def get_kernel(args):
             dim_input=args.dim_input,
             dim_hidden=args.dim_hidden,
             dim_output=args.dim_output,
-            use_softmax=args.ak_use_softmax,
         )
     elif args.kernel == "gibbs":
         kernel = pypolo.kernels.Gibbs(

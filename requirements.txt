@@ -3,6 +3,6 @@ torch==1.10.2+cpu
 matplotlib
 bezier
 scipy
-scikit-image
 configargparse
 SciencePlots
+tqdm

@@ -19,7 +19,6 @@ class AK(IKernel):
         dim_input: int,
         dim_hidden: int,
         dim_output: int,
-        use_softmax: bool,
     ) -> None:
         """
 
@@ -38,13 +37,13 @@ class AK(IKernel):
 
         """
         super().__init__(amplitude)
-        self.lengthscales = lengthscales
-        print("AK primitive lengthscales: ", self.lengthscales)
+        self.lengthscales = torch.tensor(lengthscales)
+        np.set_printoptions(precision=2)
+        print("Primitive lengthscales: ", self.lengthscales.numpy())
         self.nn = TwoHiddenLayerTanhNN(
             dim_input,
             dim_hidden,
             dim_output,
-            use_softmax,
         ).double()
 
     @property
@@ -61,7 +60,7 @@ class AK(IKernel):
         x_1,
         x_2,
     ):
-        dist = torch.cdist(x_1, x_2, p=2)
+        dist = torch.cdist(x_1, x_2)
         repre1 = self.get_representations(x_1)
         repre2 = self.get_representations(x_2)
         cov_mat = 0.0

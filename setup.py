@@ -30,9 +30,9 @@ install_requires = [
     "matplotlib",
     "bezier",
     "scipy",
-    "scikit-image",
     "configargparse",
     "SciencePlots",
+    "tqdm",
 ]
 try:
     import torch

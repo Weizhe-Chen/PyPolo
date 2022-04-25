@@ -49,8 +49,8 @@ class DataLoader:
         return self.array
 
 
-def download_environment(name):
-    path = Path(f"./environments/raw/{name}.jpg")
+def download_environment(name, data_path):
+    path = Path(f"{data_path}/raw/{name}.jpg")
     if not path.is_file():
         print(f"Downloading to {path}...this step might take some time.")
         request.urlretrieve(
@@ -61,26 +61,25 @@ def download_environment(name):
         print("Done")
 
 
-def preprocess_environment(name):
+def preprocess_environment(name, data_path):
     print(f"Preprocessing {name}.jpg...")
-    image = Image.open(f"./environments/raw/{name}.jpg").convert("L")
+    image = Image.open(f"{data_path}/raw/{name}.jpg").convert("L")
     array = np.array(image).astype(np.float64)
     resized = transform.resize(array, (
         array.shape[0] // 10,
         array.shape[1] // 10,
     ))
-    save_path = f"./environments/preprocessed/{name}.npy"
+    save_path = f"{data_path}/preprocessed/{name}.npy"
     np.save(save_path, resized)
     print(f"Saved to {save_path}.")
 
 
-def get_environment(name):
-    path = Path(f"./environments/preprocessed/{name}.npy")
+def get_environment(name, data_path):
+    path = Path(f"{data_path}/preprocessed/{name}.npy")
     if not path.is_file():
-        Path("./environments/raw").mkdir(parents=True, exist_ok=True)
-        download_environment(name)
-        Path("./environments/preprocessed").mkdir(parents=True, exist_ok=True)
-        Path("./environments/images").mkdir(parents=True, exist_ok=True)
-        preprocess_environment(name)
+        Path(f"{data_path}/raw").mkdir(parents=True, exist_ok=True)
+        download_environment(name, data_path)
+        Path(f"{data_path}/preprocessed").mkdir(parents=True, exist_ok=True)
+        preprocess_environment(name, data_path)
     data_loader = DataLoader(str(path))
     return data_loader.get_data()

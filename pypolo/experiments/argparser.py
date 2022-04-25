@@ -2,22 +2,17 @@ import configargparse
 
 
 def parse_arguments(verbose=True):
-    parser = configargparse.ArgParser(
-        default_config_files=["./configs/default.yaml"])
-    parser.add_argument("-c",
-                        "--config",
+    parser = configargparse.ArgParser()
+    parser.add_argument("--config",
                         required=False,
                         is_config_file=True,
-                        help="Config file path.")
+                        help="Configuration file path.")
+    # Experiment settings
     parser.add_argument("--seed", type=int, default=0, help="Random seed.")
     parser.add_argument("--env-name",
                         type=str,
                         required=True,
                         help="Environment name.")
-    parser.add_argument("--kernel",
-                        type=str,
-                        required=True,
-                        help="Kernel name.")
     parser.add_argument("--strategy",
                         type=str,
                         required=True,
@@ -25,7 +20,7 @@ def parse_arguments(verbose=True):
     parser.add_argument("--postfix",
                         type=str,
                         default="",
-                        help="Postfix of a method.")
+                        help="Postfix of the experiment.")
     parser.add_argument("--sensing-rate",
                         type=float,
                         help="Sensing data update rate.")
@@ -49,30 +44,6 @@ def parse_arguments(verbose=True):
                         type=int,
                         default=50,
                         help="Number of initial samples.")
-    parser.add_argument("--init-amplitude",
-                        type=float,
-                        default=1.0,
-                        help="Initial amplitude hyper-parameter.")
-    parser.add_argument("--init-lengthscale",
-                        type=float,
-                        default=0.5,
-                        help="Initial amplitude hyper-parameter.")
-    parser.add_argument("--init-noise",
-                        type=float,
-                        default=1.0,
-                        help="Initial noise variance hyper-parameter.")
-    parser.add_argument("--lr-hyper",
-                        type=float,
-                        default=0.01,
-                        help="Learning rate for hyper-parameters.")
-    parser.add_argument("--lr-nn",
-                        type=float,
-                        default=0.001,
-                        help="Learning rate for neural-network parameters.")
-    parser.add_argument("--jitter",
-                        type=float,
-                        default=1e-6,
-                        help="Small positive value for numerical stability.")
     parser.add_argument("--max-num-samples",
                         type=int,
                         default=600,
@@ -101,6 +72,35 @@ def parse_arguments(verbose=True):
                         type=float,
                         default=0.1,
                         help="Localization error tolerance.")
+    parser.add_argument("--num-train-iter",
+                        type=int,
+                        default=1000,
+                        help="Number of training iterations.")
+    # Kernel settings
+    parser.add_argument("--kernel",
+                        type=str,
+                        required=True,
+                        help="Kernel name.")
+    parser.add_argument("--init-amplitude",
+                        type=float,
+                        default=1.0,
+                        help="Initial amplitude hyper-parameter.")
+    parser.add_argument("--init-lengthscale",
+                        type=float,
+                        default=0.5,
+                        help="Initial amplitude hyper-parameter.")
+    parser.add_argument("--init-noise",
+                        type=float,
+                        default=1.0,
+                        help="Initial noise variance hyper-parameter.")
+    parser.add_argument("--lr-hyper",
+                        type=float,
+                        default=0.01,
+                        help="Learning rate for hyper-parameters.")
+    parser.add_argument("--lr-nn",
+                        type=float,
+                        default=0.001,
+                        help="Learning rate for neural-network parameters.")
     parser.add_argument("--dim-input",
                         type=int,
                         default=2,
@@ -121,21 +121,10 @@ def parse_arguments(verbose=True):
                         type=float,
                         default=0.5,
                         help="Max primitive lengthscale of AK")
-    parser.add_argument("--snapshot-interval",
-                        type=int,
-                        default=5,
-                        help="Snapshot interval.")
-    parser.add_argument("--num-train-iter",
-                        type=int,
-                        default=1000,
-                        help="Number of training iterations.")
-    parser.add("--ak-enable-softmax",
-               dest="ak_use_softmax",
-               action="store_true")
-    parser.add("--ak-disable-softmax",
-               dest="ak_use_softmax",
-               action="store_false")
-    parser.set_defaults(ak_use_softmax=True)
+    parser.add_argument("--jitter",
+                        type=float,
+                        default=1e-6,
+                        help="Small positive value for numerical stability.")
     args = parser.parse_args()
     if verbose:
         print(parser.format_values())
