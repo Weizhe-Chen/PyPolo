@@ -10,7 +10,6 @@ plt.rcParams["image.origin"] = "lower"
 plt.rcParams["image.cmap"] = "jet"
 plt.rcParams["image.interpolation"] = "gaussian"
 plt.rcParams["mathtext.fontset"] = "cm"
-plt.rcParams["text.usetex"] = True
 plt.rcParams["pdf.fonttype"] = 42
 plt.rcParams["font.family"] = "serif"
 plt.rcParams["font.size"] = 10
