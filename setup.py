@@ -33,6 +33,7 @@ install_requires = [
     "configargparse",
     "SciencePlots",
     "tqdm",
+    "scikit-image",
 ]
 try:
     import torch
@@ -57,7 +58,7 @@ setup(
     extras_require={
         "dev": ["yapf"],
         "docs": ["sphinx"],
-        "examples": ["ipython", "jupyter", "matplotlib", "tqdm", "ConfigArgParse"],
+        "examples": ["ipython", "jupyter"],
         "test": ["pytest"],
     },
     test_suite="test",

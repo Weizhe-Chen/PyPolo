@@ -6,3 +6,4 @@ scipy
 configargparse
 SciencePlots
 tqdm
+scikit-image
