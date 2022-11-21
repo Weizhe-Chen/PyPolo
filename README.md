@@ -37,7 +37,7 @@ PyPolo provides
 * **detailed documentation and readable code** to help you understand the basic idea of each algorithm,
 * **minimum dependency and cross-platform support** so that you can start your robotics journey without getting stuck in [Ubuntu](https://ubuntu.com/) and [Robot Operating System (ROS)](https://www.ros.org/),
 * **modular implementation** to facilitate the development of new algorithms,
-* **ROS integration guide** to demonstrate how to algorithms can be deployed to simulated/real robots.
+* **ROS integration guide** to demonstrate how to deploy the algorithms to simulated/real robots.
 
 # Installation 📥
 1. Create a virtual environment
