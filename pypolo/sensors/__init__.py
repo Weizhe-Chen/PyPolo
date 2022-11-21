@@ -1,4 +1,4 @@
 from .sensor import ISensor
-from .sonar import Sonar
+from .ranger import Ranger
 
-__all__ = ["ISensor", "Sonar"]
+__all__ = ["ISensor", "Ranger"]

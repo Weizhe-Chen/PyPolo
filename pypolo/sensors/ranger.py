@@ -5,8 +5,9 @@ from ..utilities import GridMap
 from .sensor import ISensor
 
 
-class Sonar(ISensor):
-    """Sonar sensor."""
+class Ranger(ISensor):
+    """Ranging sensor."""
+
     def __init__(
         self,
         rate: float,
@@ -35,7 +36,7 @@ class Sonar(ISensor):
     def sense(
         self,
         states: np.ndarray,
-        rng = None,
+        rng=None,
     ) -> np.ndarray:
         """Get sensor observations.
 
