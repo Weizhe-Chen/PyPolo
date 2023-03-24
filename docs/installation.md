@@ -40,7 +40,7 @@ If you have not installed `conda` or `mamba` yet, we recommend installing `mamba
     It can provide faster package installations and updates, especially for large packages or complex dependencies.
     Mamba also has a more efficient dependency solver that can handle complex dependency graphs with fewer conflicts than conda.
 
-If you have already installed `conda`, you can still install `mamba` by 
+If you have already installed `conda`, you can also install `mamba` by
 
 ```bash
 conda install mamba -c conda-forge
