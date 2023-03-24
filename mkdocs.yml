@@ -2,7 +2,7 @@
 site_name: PyPolo
 nav:
   - index.md
-  # - installation.md
+  - installation.md
   # - latex.md
 theme:
   name: material
@@ -25,6 +25,8 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
 markdown_extensions:
+  - admonition
+  - pymdownx.details
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
