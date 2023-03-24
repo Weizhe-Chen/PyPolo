@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/Weizhe-Chen/pypolo/main/logo.svg" align="right" width="200" alt="header pic"/>
+<img src="https://raw.githubusercontent.com/Weizhe-Chen/pypolo/main/docs/assets/logo.svg" align="right" width="200" alt="header pic"/>
 
 # What is this? 🧐
 PyPolo is a Python library for <b>Robotic Information Gathering</b>
