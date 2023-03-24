@@ -1,5 +1,5 @@
 --find-links https://download.pytorch.org/whl/cpu/torch_stable.html
-torch==1.10.2+cpu
+torch==1.13.1+cpu
 matplotlib
 bezier
 scipy
@@ -7,3 +7,6 @@ configargparse
 SciencePlots
 tqdm
 scikit-image
+yqpf
+isort
+
