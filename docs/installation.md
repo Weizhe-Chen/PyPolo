@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Installation
 
 ## Virtual Environment Manager
