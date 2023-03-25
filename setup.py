@@ -18,7 +18,7 @@ INSTALL_REQUIRES = [
 setuptools.setup(
     name="pypolo",
     version="0.0.4",
-    author="Weizhe (Wesley) Chen",
+    author="PyPolo Developers",
     author_email="chenweiz@iu.edu",
     description="PyPolo: A Python Library for Robotic Information Gathering",
     long_description=open(os.path.join(root_dir, "README.md")).read(),

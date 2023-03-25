@@ -1,5 +1,9 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 site_name: PyPolo
+site_url: https://pypolo.readthedocs.io/
+repo_url: https://github.com/Weizhe-Chen/PyPolo
+repo_name: GitHub/PyPolo
+copyright: Copyright &copy; 2022 - 2023 PyPolo Developers
 nav:
   - index.md
   - installation.md
@@ -7,24 +11,32 @@ nav:
   - framework.md
 theme:
   name: material
-  logo: assets/logo.svg
-  favicon: assets/logo.svg
+  icon:
+    repo: fontawesome/brands/github
+  logo: assets/images/social/logo.svg
+  favicon: assets/images/social/logo.svg
   features:
     - navigation.instant
+    - navigation.tracking
     - navigation.top
+    - header.autohide
+    - navigation.footer
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: white
       toggle:
-        icon: material/weather-sunny
+        icon: material/weather-night
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
+      primary: grey
       toggle:
-        icon: material/weather-night
+        icon: material/weather-sunny
         name: Switch to light mode
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 markdown_extensions:
   - def_list
   - pymdownx.tasklist:
@@ -42,4 +54,8 @@ markdown_extensions:
         custom_fences:
           - name: mermaid
             class: mermaid
-            format: !!python/name:pymdownx.superfences.fence_code_format
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Weizhe-Chen/PyPolo
+  generator: false

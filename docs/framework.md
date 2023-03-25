@@ -1,7 +1,6 @@
-
 # Framework
 
-![framework](./assets/framework.png){: style="height:100%;width:100%"}
+![framework](./assets/images/framework/framework.png){: style="height:100%;width:100%"}
 
 ## Class Diagram
 
@@ -83,7 +82,7 @@ Controller --> Task: Action
 
 ## Tasks
 
-![framework](./assets/venn.png){: style="height:100%;width:100%"}
+![framework](./assets/images/framework/venn.png){: style="height:100%;width:100%"}
 
 - [ ] Navigation
 - [x] Active Mapping
