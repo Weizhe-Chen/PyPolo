@@ -17,13 +17,13 @@ theme:
       scheme: default
       primary: white
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: black
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
 markdown_extensions:
   - def_list
@@ -43,3 +43,11 @@ markdown_extensions:
           - name: mermaid
             class: mermaid
             format: !!python/name:pymdownx.superfences.fence_code_format
+extra:
+  consent:
+    title: Cookie Consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
