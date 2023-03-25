@@ -86,8 +86,6 @@ Controller --> Task: Action
 
 ## Tasks
 
-![framework](./assets/images/framework/venn.png){: style="height:100%;width:100%"}
-
 - [ ] Navigation
 - [x] Active Mapping
     - [x] Environmental Mapping
