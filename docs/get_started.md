@@ -1,13 +1,13 @@
 # Get Started
 
-## Environment
-
 ## Sensor
 
 ## Robot
 
-## Probabilistic Model
+## Task
 
-## Informative Planner
+## Model
 
-## Experiment
+## Planner
+
+## Controller

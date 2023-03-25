@@ -36,9 +36,6 @@ class Planner {
 class Controller {
     +control()
 }
-class Policy {
-    +act()
-}
 
 Robot --* Task: Composition
 Sensor --* Robot: Composition
@@ -46,16 +43,14 @@ Model --* Task: Composition
 
 Model --> Objective: Prediction & Uncertainty
 Objective --> Planner: Reward / Cost
-Objective --> Policy: Reward / Cost
 Planner --> Controller: Waypoints
 Controller --> Task: Action
-Policy --> Task: Action
 ```
 
 ## Models
 
-- [x] Gaussian Process Regression
-- [ ] Occupanocy Grid Map
+- [x] Gaussian Process Regression (GPR)
+- [ ] Occupanocy Grid Map (OGM)
 
 ## Objectives
 
@@ -88,10 +83,13 @@ Policy --> Task: Action
 
 ## Tasks
 
+![framework](./assets/venn.png){: style="height:100%;width:100%"}
+
+- [ ] Navigation
+- [x] Active Mapping
+    - [x] Environmental Mapping
+    - [ ] Occupancy Mapping
 - [ ] Active Localization
-- [ ] Active Mapping
-    - [ ] Building an occupancy in an unknown environment
-    - [x] Building a map of a target variable, e.g. underwater terrrain elevation, without considering obstacles
 - [ ] Active Simultaneous Localization and Mapping (SLAM)
 - [ ] Autonomous Inspection
 - [ ] Search and Rescue
