@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Framework
 
 ![framework](./assets/images/framework/framework.png){: style="height:100%;width:100%"}
