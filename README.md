@@ -3,6 +3,8 @@
 # What is this? 🧐
 PyPolo is a Python library for <b>Robotic Information Gathering (RIG)</b>
 
+## Robotic Information Gathering (RIG)
+
 <img src="docs/assets/images/framework/framework.png" width="50%" align="right"/>
 
 RIG is a robotics research area that aims to answer:
