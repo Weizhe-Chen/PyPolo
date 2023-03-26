@@ -1,4 +1,4 @@
-yqpf
+yapf
 isort
 pytest
 pyright
