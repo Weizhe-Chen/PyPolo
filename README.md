@@ -37,6 +37,7 @@ We keep these needs in mind and provide
 * **Minimum dependency and cross-platform support** so that you can start your robotics journey painlessly on MacOS, Windows, Linux;
 * **Modular implementation** to facilitate the development of new algorithms;
 * **ROS integration guide** to demonstrate how to deploy the algorithms to simulated or real robots.
+* **A list of awesome** books, literature, related researchers, and other resources.
 
 RIG systems have highly coupled components.
 The planning algorithm depends on the prediction of a probabilistic model, while the model in turn relies on the data collected by the planner and controller.
