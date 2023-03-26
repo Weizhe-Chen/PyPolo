@@ -73,3 +73,11 @@ git clone https://github.com/Weizhe-Chen/PyPolo.git
 cd PyPolo
 pip install -e .
 ```
+
+If you would like to become a PyPolo developer and contribute to the project, please make sure to install the following development tools by running the command:
+
+```
+pip install -r requirements_dev.txt
+```
+
+This command will install all the necessary dependencies needed for development specified in the `requirements_dev.txt` file.
