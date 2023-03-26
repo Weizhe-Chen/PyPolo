@@ -17,7 +17,8 @@ Depending on the definition of the target function, a RIG problem boils down to 
 | Environment | Active Mapping|
 | Environment & Pose | Active SLAM |
 
-RIG has gained significant attention lately due to its broad range of applications, including environmental modeling and monitoring, 3D reconstruction and inspection, search and rescue, autonomous exploration and mapping, among others.
+RIG has gained significant attention lately due to its broad range of applications, including **environmental modeling and monitoring**, **3D reconstruction and inspection**, **search and rescue**, **autonomous exploration and mapping**, among others.
+
 An illustration of RIG's potential use case is an Autonomous Surface Vehicle (ASV) that efficiently constructs a precise underwater terrain map by actively gathering sonar measurements and minimizing uncertainty.
 
 <img src="docs/assets/images/framework/framework.png" width="50%"/>
@@ -39,8 +40,7 @@ We keep these needs in mind and provide
 * **ROS integration guide** to demonstrate how to deploy the algorithms to simulated or real robots.
 * **A list of awesome** books, literature, related researchers, and other resources.
 
-RIG systems have highly coupled components.
-The planning algorithm depends on the prediction of a probabilistic model, while the model in turn relies on the data collected by the planner and controller.
+
 Due to its interdisciplinary nature, RIG can be daunting for beginners to learn, comparing to studying planning, learning, or control problems independently.
-PyPolo is here to help.
+PyPolo is here to help!
 We aim to provide an accessible starting point for those looking to learn RIG and jumpstart their research in this domain.
