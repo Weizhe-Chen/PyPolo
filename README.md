@@ -5,7 +5,7 @@ PyPolo is a Python library for <b>Robotic Information Gathering (RIG)</b>
 
 ## Robotic Information Gathering (RIG)
 
-<img src="docs/assets/images/framework/framework.png" width="40%" align="right"/>
+<img src="docs/assets/images/framework/framework.png" width="45%" align="right"/>
 
 RIG is a robotics research area that aims to answer:
 
@@ -16,7 +16,7 @@ For example, an Autonomous Surface Vehicle (ASV) actively collects sonar measure
 
 Besides Active Mapping, RIG also includes Active Localization, Active SLAM, and Active Dynamics Learning.
 
-<img src="docs/assets/images/framework/venn.png" width="40%"/>
+<img src="docs/assets/images/framework/venn.png" width="45%"/>
 
 
 ## Why would I use this library? 🤷
