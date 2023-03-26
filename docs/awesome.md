@@ -1,5 +1,11 @@
 ## Books
 
+2005
+
+- [Probabilistic Robotics](http://www.probabilistic-robotics.org/)
+
+2021
+
 - [Information Driven Planning and Control](https://mitpress.mit.edu/9780262045421/information-driven-planning-and-control/)
 
 ## Videos
@@ -8,7 +14,13 @@
 
 ## Workshops
 
+2018
+
 - [Workshop on Informative Path Planning and Adaptive Sampling](http://robotics.usc.edu/~wippas/)
+
+
+2019
+
 - [2nd Workshop on Informative Path Planning and Adaptive Sampling](https://n.ethz.ch/~chungj/WIPPAS2019/)
 
 ## Code
@@ -17,7 +29,7 @@
 
 ## Papers
 
-Sort by dates
+2014
 
 - [Geoffrey A. Hollinger, Gaurav S. Sukhatme. Sampling-Based Robotic Information Gathering Algorithms. IJRR, 2014.](https://arxiv.org/abs/1607.01883)
 
@@ -37,13 +49,11 @@ Sort by dates
     
 ## Thesis
 
-Sort by dates
+2015
 
 - [Active Information Acquisition with Modile Robots](https://repository.upenn.edu/edissertations/1592/)
 
 ## Researchers
-
-Sorted alphabetically
 
 A
 
