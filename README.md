@@ -1,22 +1,31 @@
 <img src="docs/assets/images/social/logo.svg" align="right" width="150" alt="header pic"/>
 
-# What is this? 🧐
-PyPolo is a Python library for <b>Robotic Information Gathering (RIG)</b>
+# What Is PyPolo? 🧐
+PyPolo is a Python library for Robotic Information Gathering (RIG) -- a robotics research area that aims to answer:
 
-## Robotic Information Gathering (RIG)
+> **How does a robot (team) collect informative data to efficiently build an accurate model of an unknown target function under the robot's embodiment constraints?**
 
-<img src="docs/assets/images/framework/framework.png" width="50%" align="right"/>
+<img src="docs/assets/images/framework/venn.png" width="50%"/>
 
-RIG is a robotics research area that aims to answer:
+Depending on the definition of the target function, a RIG problem boils down to Active Mapping, Active Localization, Active SLAM, or Active Dynamics Learning.
 
-**How does a robot (team) collect *observations* to *efficiently* build an *accurate* model of a physical process under robot *embodiment constraints*?**
+
+| Target Function | Problem |
+| --------|-----------------------|
+| Environment | Active Mapping|
+| Robot's Pose | Active Localization |
+| Robot's Dynmaics | Active Dynamics Learning |
+| Environment & Pose | Active SLAM |
+
+RIG has recently received increasing attention due to its wide applicability.Applications include environmental modeling and monitoring Dunbabin and Marques (2012), 3D reconstruction and inspection Hollinger et al. (2013); Schmid et al. (2020), search and rescue Meera et al. (2019), exploration and mapping Jadidi et al. (2019), as well as active System Identification Buisson-Fenet et al. (2020).
+
+Applications of RIG include but not limited to environmental mapping and monitoring 
 
 For example, an Autonomous Surface Vehicle (ASV) actively collects sonar measurements by minimizing uncertainty to efficiently build an accurate underwater terrain map.
 
 
-Besides Active Mapping, RIG also includes Active Localization, Active SLAM, and Active Dynamics Learning.
+<img src="docs/assets/images/framework/framework.png" width="50%"/>
 
-<img src="docs/assets/images/framework/venn.png" width="50%"/>
 
 
 ## Why would I use this library? 🤷
