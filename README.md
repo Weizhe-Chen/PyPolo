@@ -12,9 +12,9 @@ Depending on the definition of the target function, a RIG problem boils down to 
 
 | Target Function | Problem |
 | --------|-----------------------|
-| Environment | Active Mapping|
-| Robot's Pose | Active Localization |
 | Robot's Dynmaics | Active Dynamics Learning |
+| Robot's Pose | Active Localization |
+| Environment | Active Mapping|
 | Environment & Pose | Active SLAM |
 
 RIG has recently received increasing attention due to its wide applicability.Applications include environmental modeling and monitoring Dunbabin and Marques (2012), 3D reconstruction and inspection Hollinger et al. (2013); Schmid et al. (2020), search and rescue Meera et al. (2019), exploration and mapping Jadidi et al. (2019), as well as active System Identification Buisson-Fenet et al. (2020).
