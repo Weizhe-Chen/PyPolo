@@ -1,26 +1,19 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABC, abstractmethod
 from typing import Tuple
 
 import numpy as np
-import torch
 
 
-class BaseModel(torch.nn.Module, metaclass=ABCMeta):
+class BaseModel(ABC):
     """Interface of a probabilistic model."""
 
     @abstractmethod
-    def __init__(self, dtype="float64",device="cpu") -> None:
-        super().__init__()
-        if dtype == "float64":
-            self.dtype = torch.float64
-        elif dtype == "float32":
-            self.dtype = torch.float32
-        else:
-            raise ValueError("dtype should be either float64 or float32.")
-        self.device = device
-
-    def add_data(self, x_new: np.ndarray, y_new: np.ndarray) -> None:
-        """Add new input-output pairs to the model.
+    def learn(self,
+              x_new: np.ndarray,
+              y_new: np.ndarray,
+              num_iter: int,
+              verbose: bool = True) -> None:
+        """Optimize the model parameters.
 
         Parameters
         ----------
@@ -28,24 +21,6 @@ class BaseModel(torch.nn.Module, metaclass=ABCMeta):
             New training inputs.
         y_new: np.ndarray, shape=(num_samples, dim_output)
             New training outputs.
-
-        """
-        raise NotImplementedError
-
-    @staticmethod
-    def _check_shape(x_train, y_train):
-        if x_train.ndim != 2:
-            raise ValueError("x_train should be 2-dimensional.")
-        if y_train.ndim != 2:
-            raise ValueError("y_train should be 2-dimensional.")
-        if x_train.shape[0] != y_train.shape[0]:
-            raise ValueError("x_train and y_train should have same length.")
-    @abstractmethod
-    def learn(self, num_iter: int, verbose: bool = True) -> None:
-        """Optimize the model parameters.
-
-        Parameters
-        ----------
         num_iter: int
             Number of optimization/training iterations.
         verbose: bool
@@ -55,7 +30,7 @@ class BaseModel(torch.nn.Module, metaclass=ABCMeta):
         raise NotImplementedError
 
     @abstractmethod
-    def forward( self, x_test: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
+    def predict(self, x_test: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
         r"""Make prediction.
 
         Parameters

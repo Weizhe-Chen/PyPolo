@@ -25,10 +25,8 @@ class Task {
     +step()
 }
 class Model {
-    +add_data()
     +learn()
-    +forward()
-    -_check_shape()
+    +predict()
 }
 class Objective {
     +eval()
