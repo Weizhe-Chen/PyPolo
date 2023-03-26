@@ -5,10 +5,10 @@ repo_url: https://github.com/Weizhe-Chen/PyPolo
 repo_name: GitHub/PyPolo
 copyright: Copyright &copy; 2022 - 2023 PyPolo Developers
 nav:
-  - index.md
-  - installation.md
-  - get_started.md
-  - framework.md
+  - Home: index.md
+  - Installation: installation.md
+  - Get Started: get_started.md
+  - Framework: framework.md
 theme:
   name: material
   custom_dir: docs/overrides
