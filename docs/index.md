@@ -1,6 +1,4 @@
-# Introduction
 
-<img src="assets/images/social/logo.svg" align="right" width="200" alt="header pic"/>
 
 ## What Is PyPolo? 🧐
 PyPolo is a Python library for Robotic Information Gathering (RIG) -- a robotics research area that aims to answer:

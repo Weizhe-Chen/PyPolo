@@ -1,5 +1,3 @@
-# Introduction
-
 <img src="docs/assets/images/social/logo.svg" align="right" width="200" alt="header pic"/>
 
 ## What Is PyPolo? 🧐
