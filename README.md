@@ -17,7 +17,7 @@ Depending on the definition of the target function, a RIG problem boils down to 
 | Environment | Active Mapping|
 | Environment & Pose | Active SLAM |
 
-RIG has gained significant attention lately due to its broad range of applications, including **environmental modeling and monitoring**, **3D reconstruction and inspection**, **search and rescue**, **autonomous exploration and mapping**, among others.
+RIG has gained significant attention lately due to its broad range of applications, including environmental modeling and monitoring, 3D reconstruction and inspection, search and rescue, autonomous exploration and mapping, among others.
 
 An illustration of RIG's potential use case is an Autonomous Surface Vehicle (ASV) that efficiently constructs a precise underwater terrain map by actively gathering sonar measurements and minimizing uncertainty.
 
