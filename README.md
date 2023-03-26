@@ -3,18 +3,20 @@
 # What is this? 🧐
 PyPolo is a Python library for <b>Robotic Information Gathering (RIG)</b>
 
-## What is Robotic Information Gathering? 🤖
-RIG is a robotics research topic that aims to solve the following embodied active learning problem:
+## Robotic Information Gathering (RIG)
+
+<img src="docs/assets/images/framework/framework.png" width="50%" align="right"/>
+
+RIG is a robotics research area that aims to answer:
 
 **How does a robot (team) collect *observations* to *efficiently* build an *accurate* model of a physical process under robot *embodiment constraints*?**
 
-<img src="docs/assets/images/framework/framework.png" align="right" width="50%" alt="header pic"/>
 For example, an Autonomous Surface Vehicle (ASV) actively collects sonar measurements by minimizing uncertainty to efficiently build an accurate underwater terrain map.
-<br/>
 
-<img src="docs/assets/images/framework/venn.png" width="400"/>
+<img src="docs/assets/images/framework/venn.png" width="50%"/>
 
-In addition to Active Mapping, RIG also includes Active Localization, Active SLAM, and Active Dynamics Learning.
+Besides Active Mapping, RIG also includes Active Localization, Active SLAM, and Active Dynamics Learning.
+
 
 ## Why would I use this library? 🤷
 
