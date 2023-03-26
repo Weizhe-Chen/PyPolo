@@ -22,7 +22,7 @@ An illustration of RIG's potential use case is an Autonomous Surface Vehicle (AS
 
 <img src="docs/assets/images/framework/framework.png" width="50%"/>
 
-## Why would I use this library? 🤷
+## Why Would I Use PyPolo? 🤷
 
 You might be interested in this library if you would like to
 
