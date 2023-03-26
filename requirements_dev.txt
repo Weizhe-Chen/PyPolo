@@ -1,0 +1,4 @@
+yqpf
+isort
+pytest
+pyright

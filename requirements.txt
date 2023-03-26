@@ -7,6 +7,3 @@ configargparse
 SciencePlots
 tqdm
 scikit-image
-yqpf
-isort
-

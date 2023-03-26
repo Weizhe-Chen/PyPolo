@@ -10,6 +10,7 @@ nav:
   - Get Started: get_started.md
   - Framework: framework.md
   - Awesome: awesome.md
+  - Contributing: contributing.md
 theme:
   name: material
   custom_dir: docs/overrides

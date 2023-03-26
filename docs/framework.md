@@ -27,7 +27,8 @@ class Task {
 class Model {
     +add_data()
     +learn()
-    +predict()
+    +forward()
+    -_check_shape()
 }
 class Objective {
     +eval()
