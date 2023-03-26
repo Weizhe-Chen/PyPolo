@@ -9,6 +9,7 @@ nav:
   - Installation: installation.md
   - Get Started: get_started.md
   - Framework: framework.md
+  - Literature: literature.md
 theme:
   name: material
   custom_dir: docs/overrides
