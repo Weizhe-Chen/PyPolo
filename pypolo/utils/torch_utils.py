@@ -1,5 +1,19 @@
+from typing import Tuple
+
 import torch
 import torch.nn.functional as F
+
+
+def get_dtype_and_device(device_name: str) -> Tuple[torch.dtype, torch.device]:
+    """Returns PyTorch dtype and device given the device name."""
+    if device_name == "cpu":
+        dtype = torch.double
+    elif "cuda" in device_name:
+        dtype = torch.float
+    else:
+        raise ValueError("Invalid device name.")
+    device = torch.device(device_name)
+    return dtype, device
 
 
 def softplus(x):
@@ -13,16 +27,6 @@ def inv_softplus(y):
         raise ValueError("Input to `inv_softplus` must be positive.")
     _y = y - 1e-6
     return _y + torch.log(-torch.expm1(-_y))
-
-
-def constraint(free_parameter):
-    """Returns constraint parameter."""
-    return softplus(free_parameter)
-
-
-def unconstraint(parameter: float, dtype: torch.dtype, device: torch.device):
-    """Returns unconstraint tensor."""
-    return inv_softplus(torch.as_tensor(parameter, dtype, device))
 
 
 def robust_cholesky(cov_mat, jitter: float = 1e-6, num_attempts: int = 3):

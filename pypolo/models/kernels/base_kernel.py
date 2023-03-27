@@ -10,69 +10,75 @@ class BaseKernel(torch.nn.Module, metaclass=ABCMeta):
     """Interface of a kernel."""
 
     @abstractmethod
-    def __init__(self, amplitude: float, dtype: torch.dtype,
-                 device: torch.device) -> None:
+    def __init__(self, amplitude: float, device_name: str) -> None:
         """Initialize a kernel.
 
         Parameters
         ----------
         amplitude : float
             Positive amplitude parameter of a kernel.
+        device_name : str
+            PyTorch device name.
         """
         super().__init__()
-        self.dtype = dtype
-        self.device = device
+        self.dtype, self.device = torch_utils.get_dtype_and_device(device_name)
         self._free_amplitude = Parameter(
-            torch_utils.unconstraint(amplitude, self.dtype, self.device))
+            torch_utils.inv_softplus(
+                torch.as_tensor(
+                    amplitude,
+                    dtype=self.dtype,
+                    device=self.device,
+                )))
 
     @property
-    def amplitude(self):
-        """Amplitude hyper-parameter for scaling the kernel values."""
-        return torch_utils.constraint(self._free_amplitude)
+    def amplitude(self) -> torch.Tensor:
+        return torch_utils.softplus(self._free_amplitude)
 
     @amplitude.setter
-    def amplitude(self, amplitude: float) -> None:
-        with torch.no_grad():
-            self._free_amplitude.copy_(
-                torch_utils.unconstraint(amplitude, self.dtype, self.device))
+    def amplitude(self, amplitude: torch.Tensor) -> None:
+        with torch.inference_mode():
+            self._free_amplitude.copy_(torch_utils.inv_softplus(amplitude))
 
-    def diag(self, x):
+    def diag(self, x: torch.Tensor) -> torch.Tensor:
         """Diagonal elements of a self-covariance matrix, i.e., variance.
 
         Parameters
         ----------
-        x : TensorType["num_samples", "num_dims"]
+        x : torch.Tensor shape=(num_inputs, dim_inputs]
             Inputs.
 
         Returns
         -------
-        TensorType["num_samples", 1]
+        torch.Tensor shape=(num_samples, 1)
             Variance vector.
 
         Notes
         -----
         This method is more efficient than computing the covariance matrix
-        and then retrieve the diagonal elements.
+        and slicing the diagonal elements.
 
         """
         return self.amplitude * torch.ones(
-            x.shape[0], 1, dtype=self.dtype, device=self.device)
+            x.size(0),
+            1,
+            dtype=self.dtype,
+            device=self.device,
+        )
 
     @abstractmethod
-    def forward(self, x_1, x_2):
+    def forward(self, x1: torch.Tensor, x2: torch.Tensor) -> torch.Tensor:
         """Compute covariance matrix.
 
         Parameters
         ----------
-        x_1 : TensorType["num_samples_1", "num_dims"]
+        x1 : torch.Tensor shape=(num_inputs_1, dim_inputs_1)
             The first input.
-        x_2 : TensorType["num_samples_2", "num_dims"]
+        x2 : torch.Tensor shape=(num_inputs_2, dim_inputs_2)
             The second input.
 
         Returns
         -------
-        cov_mat: TensorType["num_samples_1", "num_samples_2"]
+        cov_mat: torch.Tensor shape=(num_inputs_1, num_inputs_2)
             Full covariance matrix.
-
         """
         raise NotImplementedError
