@@ -2,6 +2,9 @@
 ![build](https://github.com/Weizhe-Chen/PyPolo/actions/workflows/build.yml/badge.svg)
 ![coverage](https://img.shields.io/codecov/c/github/Weizhe-Chen/PyPolo)
 ![docs](https://img.shields.io/readthedocs/pypolo)
+![license](https://img.shields.io/github/license/Weizhe-Chen/PyPolo)
+![python](https://img.shields.io/pypi/pyversions/pypolo)
+<img src="https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white" width="70"/>
 
 <img src="docs/assets/images/social/logo.svg" align="right" width="200" alt="header pic"/>
 
