@@ -1,6 +1,5 @@
-
-![CI](https://github.com/Weizhe-Chen/PyPolo/actions/workflows/ci.yml/badge.svg)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Test](https://github.com/Weizhe-Chen/PyPolo/actions/workflows/test.yml/badge.svg)
+![Coverage](./docs/assets/images/social/coverage.svg)
 
 <img src="docs/assets/images/social/logo.svg" align="right" width="200" alt="header pic"/>
 
