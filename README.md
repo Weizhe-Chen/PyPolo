@@ -1,4 +1,4 @@
-![Test](https://github.com/Weizhe-Chen/PyPolo/actions/workflows/ci.yml/badge.svg)
+![Test](https://github.com/Weizhe-Chen/PyPolo/actions/workflows/build.yml/badge.svg)
 ![Coverage](https://img.shields.io/codecov/c/github/Weizhe-Chen/PyPolo)
 
 <img src="docs/assets/images/social/logo.svg" align="right" width="200" alt="header pic"/>
