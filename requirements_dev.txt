@@ -2,4 +2,3 @@ yapf
 isort
 pytest
 pyright
-torchtyping
