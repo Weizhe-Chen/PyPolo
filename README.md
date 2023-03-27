@@ -1,3 +1,5 @@
+![CI](https://github.com/Weizhe-Chen/PyPolo/actions/workflows/ci.yml/badge.svg)
+
 <img src="docs/assets/images/social/logo.svg" align="right" width="200" alt="header pic"/>
 
 ## What Is PyPolo? 🧐
