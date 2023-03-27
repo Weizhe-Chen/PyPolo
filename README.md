@@ -1,5 +1,7 @@
-![Test](https://github.com/Weizhe-Chen/PyPolo/actions/workflows/build.yml/badge.svg)
-![Coverage](https://img.shields.io/codecov/c/github/Weizhe-Chen/PyPolo)
+![code quality](https://img.shields.io/codefactor/grade/github/Weizhe-Chen/PyPolo/main)
+![build](https://github.com/Weizhe-Chen/PyPolo/actions/workflows/build.yml/badge.svg)
+![coverage](https://img.shields.io/codecov/c/github/Weizhe-Chen/PyPolo)
+![docs](https://img.shields.io/readthedocs/pypolo)
 
 <img src="docs/assets/images/social/logo.svg" align="right" width="200" alt="header pic"/>
 
