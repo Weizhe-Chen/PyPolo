@@ -1,10 +1,5 @@
 # Get Started
 
-!!! note
-
-    $$
-    \sum_{i}x_{i}=y
-    $$
 
 ## Sensor
 
