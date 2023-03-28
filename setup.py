@@ -6,7 +6,9 @@ root_dir = os.path.dirname(os.path.realpath(__file__))
 # dependencies
 INSTALL_REQUIRES = [
     "torch>=1.13.1",
+    "tensorboard",
     "matplotlib",
+    "tqdm",
 ]
 
 setuptools.setup(
