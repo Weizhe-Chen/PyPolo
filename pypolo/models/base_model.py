@@ -13,36 +13,35 @@ class BaseModel(ABC):
               y_new: np.ndarray,
               num_iter: int,
               verbose: bool = True) -> None:
-        """Optimize the model parameters.
+        r"""Optimizes the model parameters.
 
-        Parameters
-        ----------
-        x_new: np.ndarray, shape=(num_samples, dim_input)
-            New training inputs.
-        y_new: np.ndarray, shape=(num_samples, dim_output)
-            New training outputs.
-        num_iter: int
-            Number of optimization/training iterations.
-        verbose: bool
-            Print the optimization information or not?
+        Args:
+            x_new (np.ndarray): New training inputs of shape
+                (num_inputs, dim_inputs).
+            y_new (np.ndarray): New training outputs of shape
+                (num_outputs, dim_outputs).
+            num_iter (int): Number of optimization/training iterations.
+            verbose (bool): Print the optimization information or not?
 
+        Raises:
+            NotImplementedError: This is an abstract method and must be
+                implemented by derived classes.
         """
         raise NotImplementedError
 
     @abstractmethod
     def predict(self, x_test: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
-        r"""Make prediction.
+        """Makes predictions.
 
-        Parameters
-        ----------
-        x_test: np.ndarray, shape=(num_samples, num_dims)
-            Test inputs.
+        Args:
+            x_test (np.ndarray): Test inputs of shape (num_inputs, dim_inputs).
 
-        Returns
-        -------
-        mean: np.ndarray, shape=(num_samples, 1)
-            Predictive mean.
-        std: np.ndarray, shape=(num_samples, 1)
-            Predictive standard deviation.
+        Returns:
+            Tuple[np.ndarray, np.ndarray]: A tuple containing predictive mean
+                and predictive standard deviation of shape (num_inputs, 1).
+
+        Raises:
+            NotImplementedError: This is an abstract method and must be
+                implemented by derived classes.
         """
         raise NotImplementedError
