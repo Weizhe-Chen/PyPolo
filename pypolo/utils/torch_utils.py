@@ -5,7 +5,24 @@ import torch.nn.functional as F
 
 
 def get_dtype_and_device(device_name: str) -> Tuple[torch.dtype, torch.device]:
-    """Returns PyTorch dtype and device given the device name."""
+    """
+    Returns the PyTorch dtype and device associated with the given device name.
+
+    Parameters
+    ----------
+    device_name : str
+        The name of the device. Must be one of 'cpu' or 'cuda'.
+
+    Returns
+    -------
+    Tuple[torch.dtype, torch.device]
+        A tuple containing the dtype and device.
+
+    Raises
+    ------
+    ValueError
+        If the device name is not 'cpu' and does not contain the string 'cuda'.
+    """
     if device_name == "cpu":
         dtype = torch.double
     elif "cuda" in device_name:
