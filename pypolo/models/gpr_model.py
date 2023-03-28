@@ -119,9 +119,10 @@ class GPRModel(BaseModel, nn.Module):
         r"""Make prediction.
 
         Args:
-            x_test (torch.Tensor): Test inputs of shape (num_inputs, dim_inputs).
+            x_test (torch.Tensor): Test inputs of shape
+                (num_inputs, dim_inputs).
             noise_free (bool, optional): If True, predict the latent function
-            values. Otherwise, predict the noisy targets.
+                values. Otherwise, predict the noisy targets.
 
         Returns:
             mean (torch.Tensor): Predictive mean of shape (num_inputs, 1)
@@ -236,11 +237,12 @@ class GPRModel(BaseModel, nn.Module):
             raise ValueError("Only support univariate output for now.")
         if x_new.shape[0] != y_new.shape[0]:
             raise ValueError("x_train and y_train should have same length.")
-        if not (hasattr(self, 'x_train') and hasattr(self, 'y_train')):
-            if x_new.shape[1] != self.x_train.shape[1]:
-                raise ValueError("x_train and x_new should have same shape.")
-            if y_new.shape[1] != self.y_train.shape[1]:
-                raise ValueError("y_train and y_new should have same shape.")
+        if (hasattr(self, 'x_train')
+                and x_new.shape[1] != self.x_train.shape[1]):
+            raise ValueError("x_train and x_new should have same shape.")
+        if (hasattr(self, 'y_train')
+                and y_new.shape[1] != self.y_train.shape[1]):
+            raise ValueError("y_train and y_new should have same shape.")
 
     def _compute_loss(self) -> torch.Tensor:
         r"""Compute training loss.
@@ -259,9 +261,9 @@ class GPRModel(BaseModel, nn.Module):
 
         """
         L, iK_y = self._compute_common()
-        quadratic = torch.sum(self._y_train * iK_y)
+        quadratic = torch.sum(self.y_train * iK_y)
         logdet = L.diag().square().log().sum()
-        constant = self.num_train * np.log(2 * np.pi)
+        constant = len(self.y_train) * np.log(2 * np.pi)
         return 0.5 * (quadratic + logdet + constant)
 
     def _compute_common(self):
@@ -307,6 +309,7 @@ class GPRModel(BaseModel, nn.Module):
             "nn" in the parameter name.
 
         """
+        self.lr_hyper, self.lr_nn = lr_hyper, lr_nn
         hyper_params, nn_params = [], []
         for name, param in self.named_parameters():
             if "nn" in name:
