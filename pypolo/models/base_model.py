@@ -3,9 +3,23 @@ from typing import Tuple
 
 import numpy as np
 
+from ..utils import torch_utils
+
 
 class BaseModel(ABC):
     """Interface of a probabilistic model."""
+
+    @abstractmethod
+    def __init__(self, device_name: str) -> None:
+        r"""Initializes a model with the specified device name.
+
+        Args:
+            device_name (str): The name of the PyTorch device to be used for
+                computations.
+
+        """
+        super().__init__()
+        self.dtype, self.device = torch_utils.get_dtype_and_device(device_name)
 
     @abstractmethod
     def learn(self,
