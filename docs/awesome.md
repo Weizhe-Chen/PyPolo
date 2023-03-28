@@ -1,4 +1,4 @@
-# Awesome Resources 
+# Awesome Resources
 
 ## Books
 
@@ -48,7 +48,7 @@
           year={2014},
         }
         ```
-    
+
 ## Thesis
 
 2015
@@ -59,7 +59,7 @@
 
 A
 
-- [Andreas Krause](https://las.inf.ethz.ch/krausea) 
+- [Andreas Krause](https://las.inf.ethz.ch/krausea)
 - [Alberto Quattrini Li](https://rlab.cs.dartmouth.edu/albertoq/)
 
 B
@@ -96,7 +96,7 @@ J
 
 - [Jingjin Yu](https://scholar.google.com/citations?hl=en&user=jkRa2LEAAAAJ&view_op=list_works)
 - [Jen Jen Chung](http://jenjenchung.github.io/anthropomorphic/)
-- [Juan Nieto](https://www.nietojuan.com/) 
+- [Juan Nieto](https://www.nietojuan.com/)
 - [Jeffrey A Caley](https://scholar.google.com/citations?user=zuEX5EkAAAAJ&hl=en)
 
 K
@@ -115,7 +115,6 @@ N
 
 - [Nikolay Atanasov](https://natanaso.github.io/)
 - [Nicholas RJ Lawrance](https://scholar.google.com/citations?hl=en&user=iLo7x2oAAAAJ&view_op=list_works&sortby=pubdate)
-- [Nare Karapetyan](https://sites.google.com/view/nkarapetyan)
 - [Nicholas Roy](https://scholar.google.com/citations?hl=en&user=aM3i_9oAAAAJ&view_op=list_works&sortby=pubdate)
 
 O
@@ -129,7 +128,7 @@ Q
 
 R
 
-- [Roland Siegwart](https://scholar.google.com/citations?hl=en&user=MDIyLnwAAAAJ&view_op=list_works&sortby=pubdate) 
+- [Roland Siegwart](https://scholar.google.com/citations?hl=en&user=MDIyLnwAAAAJ&view_op=list_works&sortby=pubdate)
 - [Robert Fitch](https://scholar.google.com/citations?hl=en&user=WIvjYUIAAAAJ&view_op=list_works&sortby=pubdate)
 - [Roman Marchant](https://scholar.google.com/citations?user=GRqcLuoAAAAJ&hl=en)
 
@@ -153,7 +152,6 @@ V
 
 W
 
-- [Wenhao Luo](https://webpages.charlotte.edu/wluo4/)
 - [Wee Sun Lee](https://scholar.google.com/citations?hl=en&user=8PCrLgwAAAAJ&view_op=list_works&sortby=pubdate)
 
 X
