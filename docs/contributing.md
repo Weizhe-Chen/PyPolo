@@ -104,7 +104,7 @@ Please follow these guidelines when submitting code changes to the repository.
 ### Code Quality
 
 - Use comments to provide context and explain complex code.
-- Comments follow [NumPy style](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html)
+- Docstrings follow [Google style](https://google.github.io/styleguide/pyguide.html)
 - Write code that is easy to read and understand.
 - Write code that is easy to modify and maintain.
 - Avoid using global variables and functions.
