@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
-from typing import Tuple
+from typing import Tuple, Union
 
 import numpy as np
+from torch.utils.tensorboard.writer import SummaryWriter
 
 from ..utils import torch_utils
 
@@ -26,7 +27,8 @@ class BaseModel(ABC):
               x_new: np.ndarray,
               y_new: np.ndarray,
               num_iter: int,
-              verbose: bool = True) -> None:
+              verbose: bool = True,
+              writer: Union[SummaryWriter, None] = None) -> None:
         r"""Optimizes the model parameters.
 
         Args:
@@ -36,6 +38,7 @@ class BaseModel(ABC):
                 (num_outputs, dim_outputs).
             num_iter (int): Number of optimization/training iterations.
             verbose (bool): Print the optimization information or not?
+            writer (Union[SummaryWriter, None]): Tensorboard writer.
 
         Raises:
             NotImplementedError: This is an abstract method and must be
