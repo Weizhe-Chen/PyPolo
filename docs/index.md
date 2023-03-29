@@ -1,4 +1,9 @@
-
+![code quality](https://img.shields.io/codefactor/grade/github/Weizhe-Chen/PyPolo/main)
+![build](https://github.com/Weizhe-Chen/PyPolo/actions/workflows/build.yml/badge.svg)
+![coverage](https://img.shields.io/codecov/c/github/Weizhe-Chen/PyPolo)
+![docs](https://img.shields.io/readthedocs/pypolo)
+![license](https://img.shields.io/github/license/Weizhe-Chen/PyPolo)
+![python](https://img.shields.io/pypi/pyversions/pypolo)
 
 ## What Is PyPolo? 🧐
 PyPolo is a Python library for Robotic Information Gathering (RIG) -- a robotics research area that aims to answer:
