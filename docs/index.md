@@ -38,7 +38,7 @@ You might be interested in this library if you would like to
 
 We keep these needs in mind and provide
 
-* **Interactive tutorials** to guide you to the world of RIG;
+* **Intuitive tutorials** to guide you to the world of RIG;
 * **Detailed documentation and readable code** to help you understand the basic idea of each algorithm;
 * **Minimum dependency and cross-platform support** so that you can start your robotics journey painlessly;
 * **Modular implementation** to facilitate the development of new algorithms;
