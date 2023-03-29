@@ -1,4 +1,4 @@
-# Awesome Resources
+# Resources
 
 ## Books
 
