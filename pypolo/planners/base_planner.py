@@ -1,9 +1,10 @@
 from abc import ABC, abstractmethod
+from typing import Callable, List
+
 import numpy as np
-from typing import List, Callable
 
 
-class BasePlanner:
+class BasePlanner(ABC):
 
     def __init__(self, workspace: List[float], objective: Callable) -> None:
         r"""Interface of a planner.
