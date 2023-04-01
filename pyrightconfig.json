@@ -1,0 +1,16 @@
+{
+    "reportGeneralTypeIssues": false,
+    "reportUnboundVariable": false,
+    "reportOptionalSubscript": false,
+    "reportOptionalMemberAccess": false,
+    "reportOptionalOperand": false,
+    "reportOptionalCall": false,
+    "reportOptionalIterable": false,
+    "reportOptionalContextManager": false,
+    "reportPrivateImportUsage": false,
+    "executionEnvironments": [
+        {
+            "root": "./"
+        }
+    ]
+}
