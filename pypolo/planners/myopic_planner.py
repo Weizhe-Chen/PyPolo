@@ -44,13 +44,14 @@ class MyopicPlanner(BasePlanner):
                                        size=(self.num_candidates, 2))
         # Evaluate candidates.
         informativeness = self.objective(candidates)
-        informativeness = ((informativeness - informativeness.min()) /
-                           informativeness.ptp())
         diffs = candidates - state[:2]
         dists = np.hypot(diffs[:, 0], diffs[:, 1])
+        # Normalize informativeness and distance.
+        informativeness = ((informativeness - informativeness.min()) /
+                           informativeness.ptp())
         dists = (dists - dists.min()) / dists.ptp()
+        # Compute scores.
         scores = informativeness - dists
-        indices = np.argsort(scores)[::-1]
         # Select the candidate with the highest score.
         waypoint = candidates[np.argmax(scores)].reshape(1, 2)
         return waypoint
