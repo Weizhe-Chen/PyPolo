@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
+
 import numpy as np
+
 from ..utils import TensorMap
-from typing import Any
 
 
 class BaseSensor(ABC):
@@ -19,7 +20,11 @@ class BaseSensor(ABC):
         self.dt = 1.0 / rate
 
     @abstractmethod
-    def sense(self, robot_state: np.ndarray, env_state: TensorMap) -> Any:
+    def sense(
+        self,
+        robot_state: np.ndarray,
+        env_state: TensorMap,
+    ) -> np.ndarray:
         r"""Sense the environment.
 
         Args:
@@ -27,7 +32,7 @@ class BaseSensor(ABC):
             env_state (TensorMap): environment state.
 
         Returns:
-            Any: sensor output.
+            np.ndarray: sensor output of shape (num_obs, ).
 
         """
         raise NotImplementedError

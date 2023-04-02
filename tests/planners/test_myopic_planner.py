@@ -15,7 +15,6 @@ def planner():
 def test_plan(planner):
     state = np.array([0, 0, 0])
     waypoint = planner.plan(state)
-    print(waypoint)
     assert isinstance(waypoint, np.ndarray)
     assert waypoint.shape == (1, 2)
     assert np.all(waypoint >= planner.workspace[:2])

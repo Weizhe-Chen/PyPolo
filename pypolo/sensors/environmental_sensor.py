@@ -29,9 +29,10 @@ class EnvironmentalSensor(BaseSensor):
             env_state (TensorMap): environment state.
 
         Returns:
-            float: sensor output.
+            np.ndarray: sensor output of shape (num_obs, ).
 
         """
         ground_truth = env_state.get_values(robot_state[0], robot_state[1])
         observation = ground_truth + np.random.normal(0, self.noise_scale)
+        assert observation.shape == (len(ground_truth), )
         return observation
