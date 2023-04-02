@@ -47,9 +47,9 @@ class TensorMap:
 
     def _check_positions(self, xs: np.ndarray, ys: np.ndarray):
         if (self.min_x > xs).any() or (xs >= self.max_x).any():
-            raise ValueError(f"The x values are out of the map.")
+            raise ValueError("The x values are out of the map.")
         if (self.min_y > ys).any() or (ys >= self.max_y).any():
-            raise ValueError(f"The y values are out of the map.")
+            raise ValueError("The y values are out of the map.")
 
     def plot(self, plotter: pv.Plotter = None) -> pv.Plotter:
         if plotter is None:
