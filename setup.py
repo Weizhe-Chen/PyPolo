@@ -9,6 +9,7 @@ INSTALL_REQUIRES = [
     "tensorboard",
     "matplotlib",
     "tqdm",
+    "pyvista",
 ]
 
 setuptools.setup(
