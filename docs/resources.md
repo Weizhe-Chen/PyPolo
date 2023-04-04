@@ -6,19 +6,25 @@
 
 - [Information Driven Planning and Control](https://mitpress.mit.edu/9780262045421/information-driven-planning-and-control/). Silvia Ferrari, Thomas A. Wettergren, MIT Press, 2021
 
-## Videos
+## Labs
+- [Laboratory for Intelligent Systems and Controls](http://lisc.mae.cornell.edu/wordpress/). Cornell
+- [Existential Robotics Laboratory](http://erl.ucsd.edu/). UCSD
+- [General Robotics, Automation, Sensing and Perception (GRASP) Laboratory](https://www.grasp.upenn.edu/). Upenn
 
+## Videos
 - [Exploration and Informative Planning](https://www.youtube.com/watch?v=3w5YIYN-y8o). [Course Website](https://dmar-bonn.com/teaching/dmar2021/). Marija Popović, 2021
 
 ## Workshops
-
 - [Workshop on Informative Path Planning and Adaptive Sampling](http://robotics.usc.edu/~wippas/). ICRA, 2018
-
 - [2nd Workshop on Informative Path Planning and Adaptive Sampling](https://n.ethz.ch/~chungj/WIPPAS2019/). RSS, 2019
 
 ## Code
 
 - [Informative Path Planning](https://github.com/geflaspohler/informative-path-planning). Python, Genevieve Flaspohler
+- [Anytime Planning for Decentralized Multirobot Active Information Gathering](https://bitbucket.org/brentsc/infoplanner/src/master/). C++, Brent Schlotfeldt
+- [TARE: A Hierarchical Framework for Efficiently Exploring Complex 3D Environments](https://github.com/caochao39/tare_planner). C++, Cao Chao
+- [SIMP: Long-Term Indoor Localization with Metric-Semantic Mapping using a Floor Plan Prior](https://github.com/PRBonn/SIMP). C++/Python, Nicky Zimmerman
+- [Semantic Shannon Mutual Information (SSMI)](https://github.com/ExistentialRobotics/SSMI). C++, Arash Asgharivaskasi
 
 ## Papers
 
@@ -207,4 +213,6 @@
 ## Thesis
 
 - [Active Information Acquisition with Modile Robots](https://repository.upenn.edu/edissertations/1592/). Nikolay Asenov Atanasov, 2015
-
+- [Autonomous Sensor Path Planning and Control for Active Information Gathering](https://dukespace.lib.duke.edu/dspace/bitstream/handle/10161/9409/Lu_duke_0066D_12665.pdf). Wenjie Lu, 2014
+- [Navigation and Tracking in Networks:Distributed Algorithms for Cooperative Estimation and Information-Seeking Control](https://publik.tuwien.ac.at/files/PubDat_238489.pdf). Florian Meyer, 2015
+- [Random Finite Set Information-Theoretic Sensor Control for Autonomous Multi-Sensor Multi-Object Surveillance](https://ecommons.cornell.edu/handle/1813/111993). Keith LeGrand, 2022
