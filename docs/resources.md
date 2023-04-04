@@ -6,6 +6,11 @@
 
 - [Information Driven Planning and Control](https://mitpress.mit.edu/9780262045421/information-driven-planning-and-control/). Silvia Ferrari, Thomas A. Wettergren, MIT Press, 2021
 
+## Labs
+- [Laboratory for Intelligent Systems and Controls](http://lisc.mae.cornell.edu/wordpress/). Cornell
+- [Existential Robotics Laboratory](http://erl.ucsd.edu/). UCSD
+- [General Robotics, Automation, Sensing and Perception (GRASP) Laboratory](https://www.grasp.upenn.edu/). Upenn
+
 ## Videos
 
 - [Exploration and Informative Planning](https://www.youtube.com/watch?v=3w5YIYN-y8o). [Course Website](https://dmar-bonn.com/teaching/dmar2021/). Marija Popović, 2021
