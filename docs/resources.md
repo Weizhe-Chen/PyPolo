@@ -22,6 +22,7 @@
 - [Anytime Planning for Decentralized Multirobot Active Information Gathering](https://bitbucket.org/brentsc/infoplanner/src/master/). C++, Brent Schlotfeldt
 - [TARE: A Hierarchical Framework for Efficiently Exploring Complex 3D Environments](https://github.com/caochao39/tare_planner). C++, Cao Chao
 - [SIMP: Long-Term Indoor Localization with Metric-Semantic Mapping using a Floor Plan Prior](https://github.com/PRBonn/SIMP). C++/Python, Nicky Zimmerman
+- [Semantic Shannon Mutual Information (SSMI)](https://github.com/ExistentialRobotics/SSMI). C++, Arash Asgharivaskasi
 
 ## Papers
 
