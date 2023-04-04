@@ -19,6 +19,8 @@
 ## Code
 
 - [Informative Path Planning](https://github.com/geflaspohler/informative-path-planning). Python, Genevieve Flaspohler
+- [Anytime Planning for Decentralized Multirobot Active Information Gathering](https://bitbucket.org/brentsc/infoplanner/src/master/)
+- [TARE: A Hierarchical Framework for Efficiently Exploring Complex 3D Environments](https://github.com/caochao39/tare_planner)
 
 ## Papers
 
