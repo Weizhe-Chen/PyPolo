@@ -11,7 +11,15 @@ nav:
   - Framework: framework.md
   - Resources: resources.md
   - Contributing: contributing.md
-  - API: api.md
+  - Developers:
+    - Class Diagram: developers/class_diagram.md
+    - Models: developers/models.md
+    - Objectives: developers/objectives.md
+    - Planners: developers/planners.md
+    - Controllers: developers/controllers.md
+    - Sensors: developers/sensors.md
+    - Robots: developers/robots.md
+    - Tasks: developers/tasks.md
 theme:
   name: material
   custom_dir: docs/overrides
