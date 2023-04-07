@@ -6,19 +6,18 @@ import numpy as np
 class BaseRobot(ABC):
     r"""Base class for a robot."""
 
-    def __init__(self, rate: float, state: np.ndarray):
+    def __init__(self, hertz: float, state: np.ndarray):
         r"""Initializes the robot with a control rate and initial state.
 
         Args:
-            rate (float): Control rate of the robot.
+            hertz (float): Control rate of the robot [#cycles / second].
             state (np.ndarray): Initial state of the robot.
                 Shape: (num_states, ).
 
         """
         self.state = state
-        self.rate = rate
-        self.control_dt = 1.0 / rate
-        self.sensing_dt = 0.0
+        self.hertz = hertz
+        self.control_dt = 1.0 / hertz
 
     def take(self, action: np.ndarray) -> None:
         r"""Takes an action and updates the state of the robot.
