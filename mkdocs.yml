@@ -8,11 +8,16 @@ nav:
   - Introduction: index.md
   - Installation: installation.md
   - Get Started: get_started.md
-  - Framework: framework.md
-  - Resources: resources.md
+  - Resources:
+    - Books: resources/books.md
+    - Videos: resources/videos.md
+    - Workshops: resources/workshops.md
+    - Code: resources/code.md
+    - Papers: resources/papers.md
+    - Thesis: resources/thesis.md
   - Contributing: contributing.md
   - Developers:
-    - Class Diagram: developers/class_diagram.md
+    - Framework: developers/framework.md
     - Models: developers/models.md
     - Objectives: developers/objectives.md
     - Planners: developers/planners.md

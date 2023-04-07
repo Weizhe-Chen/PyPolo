@@ -1,40 +1,19 @@
-# Resources
-
-## Books
-
-- [Probabilistic Robotics](http://www.probabilistic-robotics.org/). Sebastian Thrun, Wolfram Burgard, Dieter Fox, MIT Press, 2015
-- [Information Driven Planning and Control](https://mitpress.mit.edu/9780262045421/information-driven-planning-and-control/). Silvia Ferrari, Thomas A. Wettergren, MIT Press, 2021
-
-
-## Videos
-
-- [Exploration and Informative Planning](https://www.youtube.com/watch?v=3w5YIYN-y8o). [Course Website](https://dmar-bonn.com/teaching/dmar2021/). Marija Popović, 2021
-
-## Workshops
-
-- [Workshop on Informative Path Planning and Adaptive Sampling](http://robotics.usc.edu/~wippas/). ICRA, 2018
-- [2nd Workshop on Informative Path Planning and Adaptive Sampling](https://n.ethz.ch/~chungj/WIPPAS2019/). RSS, 2019
-
-## Code
-
-- [Informative Path Planning](https://github.com/geflaspohler/informative-path-planning). Python, Genevieve Flaspohler
-- [Anytime Planning for Decentralized Multirobot Active Information Gathering](https://bitbucket.org/brentsc/infoplanner/src/master/). C++, Brent Schlotfeldt
-- [TARE: A Hierarchical Framework for Efficiently Exploring Complex 3D Environments](https://github.com/caochao39/tare_planner). C++, Cao Chao
-- [SIMP: Long-Term Indoor Localization with Metric-Semantic Mapping using a Floor Plan Prior](https://github.com/PRBonn/SIMP). C++/Python, Nicky Zimmerman
-- [Semantic Shannon Mutual Information (SSMI)](https://github.com/ExistentialRobotics/SSMI). C++, Arash Asgharivaskasi
-
-## Papers
+---
+comments: true
+---
 
 !!! note
 
-    - Whenever possible, please use **ArXiv links** to ensure that the papers are accessible to everyone.
-    - Please make sure to use **4 spaces** for Markdown indentation.
-    - If the paper has been published, please cite the **BibTeX pointing to the journal or conference** rather than ArXiv.
-    - Whenever possible, please use the [Google Scholar](https://scholar.google.com/) BibTeX and double-check the information as it may be incorrect.
-    - Please avoid including the `organization` and `publisher` items in the citation, as well as any duplicated information. For instance, please remove `organization={Citeseer}` or `publisher={IEEE}` from the citation. Additionally, please delete the duplicated information such as the `2021` in `booktitle={2021 IEEE International Conference on Robotics and Automation (ICRA)}`, since there is a dedicated `year` entry.
-    - It would be helpful to include the conference or journal name initials. For instance, please add `(RSS)` to the end of `booktitle={Robotics: Science and Systems}`.
+    - Use **ArXiv links** to ensure that the papers are accessible to everyone.
+    - Cite the BibTeX pointing to the **journal or conference** rather than ArXiv.
+    - Follow the **[Google Scholar](https://scholar.google.com/) BibTeX format** and **double-check** the information as it may be incorrect.
+    - Use **4 spaces** for Markdown indentation.
 
-2013
+!!! tip
+    - Please avoid including the `organization` and `publisher` items in the citation, as well as any duplicated information. For instance, please remove `organization={Citeseer}` or `publisher={IEEE}` from the citation. Additionally, please delete the duplicated information such as the `2021` in `booktitle={2021 IEEE International Conference on Robotics and Automation (ICRA)}`, since there is a dedicated `year` entry.
+    - It would be helpful to include the conference or journal name initials. For example, please add `(RSS)` to the end of `booktitle={Robotics: Science and Systems}`.
+
+## 2013
 
 - [Sampling-based Motion Planning for Robotic Information Gathering](http://www.roboticsproceedings.org/rss09/p51.pdf). Geoffrey A. Hollinger, Gaurav S. Sukhatme, RSS.
 
@@ -65,7 +44,7 @@
         }
         ```
 
-2014
+## 2014
 
 - [Sampling-Based Robotic Information Gathering Algorithms](https://arxiv.org/abs/1607.01883). Geoffrey A. Hollinger, Gaurav S. Sukhatme, IJRR.
 
@@ -83,7 +62,7 @@
         }
         ```
 
-2019
+## 2019
 
 - [Sampling-based incremental information gathering with applications to robotic exploration and environmental monitoring](https://journals.sagepub.com/doi/abs/10.1177/0278364919844575?journalCode=ijra). Maani Ghaari Jadidi, Jaime Valls Miro, Gamini Dissanayake, IJRR.
 
@@ -147,7 +126,7 @@
         }
         ```
 
-2021
+## 2021
 
 - [Sampling-based planning for non-myopic multi-robot information gathering](https://link.springer.com/article/10.1007/s10514-021-09995-4). Yiannis Kantaros, Brent Schlotfeldt, Nikolay Atanasov, George J. Pappas, Autonomous Robots.
 
@@ -179,7 +158,7 @@
         }
         ```
 
-2023
+## 2023
 
 - [A Survey on Active Simultaneous Localization and Mapping: State of the Art and New Frontiers](https://arxiv.org/abs/2207.00254). Julio A. Placed, Jared Strader, Henry Carrillo, Nikolay Atanasov, Vadim Indelman, Luca Carlone, José A. Castellanos , TRO.
 
@@ -206,18 +185,3 @@
           year={2023}
         }
         ```
-
-## Thesis
-
-2014
-
-- [Autonomous Sensor Path Planning and Control for Active Information Gathering](https://dukespace.lib.duke.edu/dspace/bitstream/handle/10161/9409/Lu_duke_0066D_12665.pdf). Wenjie Lu.
-
-2015
-
-- [Active Information Acquisition with Modile Robots](https://repository.upenn.edu/edissertations/1592/). Nikolay Asenov Atanasov.
-- [Navigation and Tracking in Networks:Distributed Algorithms for Cooperative Estimation and Information-Seeking Control](https://publik.tuwien.ac.at/files/PubDat_238489.pdf). Florian Meyer.
-
-2022
-
-- [Random Finite Set Information-Theoretic Sensor Control for Autonomous Multi-Sensor Multi-Object Surveillance](https://ecommons.cornell.edu/handle/1813/111993). Keith LeGrand.
