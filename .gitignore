@@ -1,4 +1,7 @@
-tests/*.mp4
+# mp4 or gif in tests/
+tests/**/*.mp4
+tests/**/*.gif
+
 .DS_Store
 notebooks/data/
 notebooks/outputs/
