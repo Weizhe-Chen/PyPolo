@@ -3,3 +3,4 @@ tensorboard
 matplotlib
 tqdm
 pyvista
+imageio-ffmpeg

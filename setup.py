@@ -10,6 +10,7 @@ INSTALL_REQUIRES = [
     "matplotlib",
     "tqdm",
     "pyvista",
+    "imageio-ffmpeg",
 ]
 
 setuptools.setup(
