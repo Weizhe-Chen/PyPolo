@@ -39,16 +39,18 @@ def test_step(robot: DifferentialDriveRobot) -> None:
     assert np.allclose(new_state, expected)
 
 
-def test_visualization(robot: DifferentialDriveRobot, render: bool) -> None:
+def test_differential_drive_visualization(
+    robot: DifferentialDriveRobot,
+    render: bool,
+) -> None:
     if not render:
         return
     np.random.seed(1)
-    plotter = pv.Plotter()
+    plotter = pv.Plotter(notebook=False, off_screen=True)
     plotter.add_axes()
     plotter.add_text("Differential Drive Robot", font_size=24)
     plane = pv.Plane(i_size=20, j_size=20)
-    plotter.add_mesh(plane, show_edges=True, color="lightblue")
-
+    plotter.add_mesh(plane, show_edges=True, color="lightblue", lighting=False)
     #  Create a box for the robot body
     body_length = 0.5
     body_width = 0.3
@@ -61,10 +63,11 @@ def test_visualization(robot: DifferentialDriveRobot, render: bool) -> None:
         -body_height / 2,
         body_height / 2,
     ])
-    save_path = os.path.join(os.path.dirname(__file__),
-                             "test_differential_drive_robot.mp4")
-    plotter.open_movie(save_path)
-
+    save_path = os.path.join(
+        os.path.dirname(__file__),
+        "pypolo_differential_drive_robot.gif",
+    )
+    plotter.open_gif(save_path)
     # Animate the robot movement
     num_steps = 100
     for i in range(num_steps):
@@ -73,6 +76,11 @@ def test_visualization(robot: DifferentialDriveRobot, render: bool) -> None:
         rotated_box = box.rotate_z(robot.state[2] * 180 / math.pi)
         translated_box = rotated_box.translate(
             (robot.state[0], robot.state[1], 0))
-        plotter.add_mesh(translated_box, color="red", opacity=i / num_steps)
+        plotter.add_mesh(
+            translated_box,
+            color="red",
+            opacity=i / num_steps,
+            lighting=False,
+        )
         plotter.write_frame()
     plotter.close()
