@@ -1,3 +1,4 @@
+import os
 import numpy as np
 import pytest
 import pyvista as pv
@@ -63,6 +64,22 @@ def test_get_values_raises_error(tensor_map):
 def test_plot_returns_plotter(tensor_map, render):
     plotter = tensor_map.plot()
     assert isinstance(plotter, pv.Plotter)
-    plotter.add_axes(interactive=True)
     if render:
-        plotter.show()
+        plotter.add_axes(interactive=True)
+        plotter.add_text("Tensor Map", font_size=24)
+        plotter.camera.zoom(1.5)
+        viewup = [0.5, 0.5, 1]
+        path = plotter.generate_orbital_path(
+            viewup=viewup,
+            shift=50,
+        )
+        save_path = os.path.join(os.path.dirname(__file__),
+                                 "test_tensor_map.mp4")
+        plotter.open_movie(save_path)
+        plotter.orbit_on_path(
+            path,
+            write_frames=True,
+            viewup=[0, 0, 1],
+            step=0.05,
+        )
+        plotter.close()

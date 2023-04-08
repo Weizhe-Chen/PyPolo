@@ -1,3 +1,5 @@
+import os
+
 import pytest
 import torch
 
@@ -9,7 +11,11 @@ def verbose() -> bool:
 
 @pytest.fixture(scope="module")
 def render() -> bool:
-    return False
+    if os.getenv('CI'):
+        print('Disabling rendering in CI environment.')
+        return False
+    else:
+        return True
 
 
 @pytest.fixture(scope="module")

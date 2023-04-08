@@ -5,6 +5,7 @@ import torch
 from pypolo.models import GPRModel
 from pypolo.models.kernels import GaussianKernel
 from matplotlib import pyplot as plt
+import pyvista as pv
 
 
 @pytest.fixture
@@ -56,4 +57,6 @@ def test_predict(model, verbose, render):
             label="Predicted uncertainty",
         )
         plt.legend(loc="upper left")
-        plt.show()
+        plt.show(block=False)
+        plt.pause(2)
+        plt.close()

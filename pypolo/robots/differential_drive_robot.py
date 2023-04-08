@@ -16,6 +16,8 @@ class DifferentialDriveRobot(BaseRobot):
                 Shape: (num_states, ).
 
         """
+        assert hertz > 0.0
+        assert state.shape == (5, )
         self.state = state
         self.hertz = hertz
         self.control_dt = 1.0 / hertz
@@ -31,6 +33,8 @@ class DifferentialDriveRobot(BaseRobot):
             np.ndarray: New state of the robot.
 
         """
+        assert state.shape == (5, )
+        assert action.shape == (2, )
         x, y, theta, v, omega = state
         delta_v, delta_omega = action
         delta_x = v * math.cos(theta) * self.control_dt
@@ -43,23 +47,21 @@ class DifferentialDriveRobot(BaseRobot):
         new_omega = omega + delta_omega
         return np.array([new_x, new_y, new_theta, new_v, new_omega])
 
-    def error(self, state: np.ndarray, goal: np.ndarray) -> np.ndarray:
-        r"""Given a state and a goal, returns an error array with the same
+    def error(self, x: float, y: float) -> np.ndarray:
+        r"""Given a goal location [x, y], returns an error array with the same
         shape as the action space.
 
         Args:
-            state (np.ndarray): Current state of the robot.
-                Shape: (num_states, ).
-            goal (np.ndarray): Goal state of the robot.
-                Shape: (num_states, ).
+            x (float): Goal x position.
+            y (float): Goal y position.
 
         Returns:
             np.ndarray: An error array of shape (num_actions, ).
 
         """
-        error_x = goal[0] - state[0]
-        error_y = goal[1] - state[1]
-        error_v = math.sqrt(error_x**2 + error_y**2)
-        error_omega = math.atan2(error_y, error_x) - state[2]
-        error_omega = (error_omega + math.pi) % (2 * math.pi) - math.pi
-        return np.array([error_v, error_omega])
+        error_x = x - self.state[0]
+        error_y = y - self.state[1]
+        linear_error = math.sqrt(error_x**2 + error_y**2)
+        error_omega = math.atan2(error_y, error_x) - self.state[2]
+        angular_error = (error_omega + math.pi) % (2 * math.pi) - math.pi
+        return np.array([linear_error, angular_error])

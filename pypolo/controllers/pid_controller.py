@@ -15,17 +15,20 @@ class PIDController(BaseController):
         kp: float,
         ki: float,
         kd: float,
+        error_threshold: float,
     ):
         r"""Initialize the PID controller.
 
         Args:
-            error_fn (Callable): The error function. It should take the current
-                state and the goal state as arguments and return the error of
+            error_fn (Callable): The robot's error function. It should take
+                the goal [x, y] as arguments and return the error of
                 shape (num_actions, ).
             dt (float): The time step.
             kp (float): The proportional gain.
             ki (float): The integral gain.
             kd (float): The derivative gain.
+            error_threshold (float): If the error is less than this threshold,
+                the goal is considered reached.
 
         """
         super().__init__()
@@ -34,25 +37,24 @@ class PIDController(BaseController):
         self.kp = kp
         self.ki = ki
         self.kd = kd
+        self.error_threshold = error_threshold
         self.integral = 0.0
         self.previous_error = 0.0
-        assert self.dt > 0.0, "The time step must be positive."
 
-    def control(self, state: np.ndarray) -> np.ndarray:
+    def control(self) -> np.ndarray:
         r"""Compute the control action using the PID algorithm.
-
-        Args:
-            state (np.ndarray): The current state of the system.
 
         Returns:
             float: The control action.
 
         """
         goal = self.goals[0]
-        error = self.error_fn(state, goal)
+        error = self.error_fn(x=goal[0], y=goal[1])
         self.integral += error * self.dt
         derivative = (error - self.previous_error) / self.dt
         self.previous_error = error
         action = (self.kp * error + self.ki * self.integral +
                   self.kd * derivative)
+        if np.linalg.norm(error) < self.error_threshold:
+            self.goals = self.goals[1:]
         return action
