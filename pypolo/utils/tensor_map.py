@@ -50,13 +50,3 @@ class TensorMap:
             raise ValueError("The x values are out of the map.")
         if (self.min_y > ys).any() or (ys >= self.max_y).any():
             raise ValueError("The y values are out of the map.")
-
-    def plot(self, plotter: pv.Plotter = None) -> pv.Plotter:
-        if plotter is None:
-            plotter = pv.Plotter()
-        plotter.add_mesh(
-            self.grid,
-            scalars="values",
-            show_edges=True,
-        )
-        return plotter
