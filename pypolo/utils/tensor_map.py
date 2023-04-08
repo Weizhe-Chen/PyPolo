@@ -20,7 +20,7 @@ class TensorMap:
         self.tensor = tensor
         self.num_rows, self.num_cols, self.num_layers = tensor.shape
         self.update_geometry()
-        self.grid.cell_data["values"] = self.tensor.flatten()
+        self.grid.point_data["values"] = self.tensor.flatten()
 
     def update_geometry(self) -> None:
         self.len_x = self.num_cols * self.resolution
@@ -30,11 +30,7 @@ class TensorMap:
         self.min_y = self.origin[1]
         self.max_y = self.origin[1] + self.len_y
         self.grid = pv.UniformGrid(
-            dimensions=[
-                self.num_rows + 1,
-                self.num_cols + 1,
-                self.num_layers + 1,
-            ],
+            dimensions=self.tensor.shape,
             origin=self.origin,
             spacing=[self.resolution] * 3,
         )
