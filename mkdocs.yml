@@ -15,8 +15,8 @@ nav:
     - Code: resources/code.md
     - Papers: resources/papers.md
     - Thesis: resources/thesis.md
-  - Contributing: contributing.md
   - Developers:
+    - Contributing: developers/contributing.md
     - Framework: developers/framework.md
     - Models: developers/models.md
     - Objectives: developers/objectives.md
