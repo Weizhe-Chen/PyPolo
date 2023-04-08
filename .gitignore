@@ -1,3 +1,4 @@
+tests/*.mp4
 .DS_Store
 notebooks/data/
 notebooks/outputs/
