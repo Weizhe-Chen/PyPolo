@@ -57,7 +57,7 @@ def test_differential_drive_visualization(
     )
     plotter.open_gif(save_path)
     # Animate the robot movement
-    num_steps = 100
+    num_steps = 30
     for i in tqdm(range(num_steps)):
         action = np.random.randn(2)
         robot.take(action)

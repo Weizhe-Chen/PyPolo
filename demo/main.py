@@ -25,6 +25,12 @@ box = pv.Box(bounds=[
     0.0,
     body_height,
 ])
-
 plotter.add_mesh(box, color="red")
+
+auv = pv.read("auv.stl")
+#  auv = auv.translate((-auv.center[0], -auv.center[1], -auv.center[2]))
+plotter.add_mesh(auv, color="orange")
+print(box.center)
+print(auv.center)
 plotter.show()
+#  auv.save("auv.stl")
