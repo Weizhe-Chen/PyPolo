@@ -1,8 +1,6 @@
-import os
 import numpy as np
 import pypolo
 import pyvista as pv
-from pyvista import examples
 
 array = np.load("./data/N17E073.npy").astype(np.float64)
 array /= 100
@@ -13,24 +11,8 @@ plotter = pv.Plotter()
 terrain = env.grid.warp_by_scalar()
 plotter.add_mesh(terrain, cmap="terrain")
 plotter.add_axes(interactive=True)
-
-body_length = 0.5
-body_width = 0.3
-body_height = 0.2
-box = pv.Box(bounds=[
-    -body_length / 2,
-    body_length / 2,
-    -body_width / 2,
-    body_width / 2,
-    0.0,
-    body_height,
-])
-plotter.add_mesh(box, color="red")
-
-auv = pv.read("auv.stl")
-#  auv = auv.translate((-auv.center[0], -auv.center[1], -auv.center[2]))
+auv = pv.read("./data/auv.stl")
+auv = auv.translate([0, 0, array.max()]).scale(2)
 plotter.add_mesh(auv, color="orange")
-print(box.center)
-print(auv.center)
+plotter.add_bounding_box(line_width=1, color='grey')
 plotter.show()
-#  auv.save("auv.stl")
