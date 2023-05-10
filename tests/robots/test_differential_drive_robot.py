@@ -4,6 +4,8 @@ import math
 import numpy as np
 import pytest
 import pyvista as pv
+from pyvista import examples
+from tqdm import tqdm
 
 from pypolo.robots import DifferentialDriveRobot
 
@@ -46,23 +48,9 @@ def test_differential_drive_visualization(
     if not render:
         return
     np.random.seed(1)
-    plotter = pv.Plotter(notebook=False, off_screen=True)
-    plotter.add_axes()
-    plotter.add_text("Differential Drive Robot", font_size=24)
+    plotter = pv.Plotter(off_screen=True)
     plane = pv.Plane(i_size=20, j_size=20)
-    plotter.add_mesh(plane, show_edges=True, color="lightblue", lighting=False)
-    #  Create a box for the robot body
-    body_length = 0.5
-    body_width = 0.3
-    body_height = 0.2
-    box = pv.Box(bounds=[
-        -body_length / 2,
-        body_length / 2,
-        -body_width / 2,
-        body_width / 2,
-        -body_height / 2,
-        body_height / 2,
-    ])
+    robot_mesh = pv.read("./auv.stl")
     save_path = os.path.join(
         os.path.dirname(__file__),
         "pypolo_differential_drive_robot.gif",
@@ -70,17 +58,18 @@ def test_differential_drive_visualization(
     plotter.open_gif(save_path)
     # Animate the robot movement
     num_steps = 100
-    for i in range(num_steps):
+    for i in tqdm(range(num_steps)):
         action = np.random.randn(2)
         robot.take(action)
-        rotated_box = box.rotate_z(robot.state[2] * 180 / math.pi)
-        translated_box = rotated_box.translate(
+        rotated_mesh = robot_mesh.rotate_z(robot.state[2] * 180 / math.pi)
+        translated_mesh = rotated_mesh.translate(
             (robot.state[0], robot.state[1], 0))
-        plotter.add_mesh(
-            translated_box,
-            color="red",
-            opacity=i / num_steps,
-            lighting=False,
-        )
+
+        plotter.add_axes()
+        plotter.add_text(f"Timestep: {i:03d}", font_size=18)
+        plotter.add_mesh(plane, show_edges=True, color="white")
+        plotter.add_mesh(translated_mesh, color="orange", smooth_shading=True)
         plotter.write_frame()
+        plotter.clear()
+        plotter.enable_lightkit()
     plotter.close()
