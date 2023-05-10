@@ -4,7 +4,7 @@ import pypolo
 import pyvista as pv
 from pyvista import examples
 
-array = np.load("./N17E073.npy").astype(np.float64)
+array = np.load("./data/N17E073.npy").astype(np.float64)
 array /= 100
 array = array[:, :, np.newaxis]
 env = pypolo.utils.TensorMap(array, origin=np.zeros(3), resolution=0.1)
@@ -22,8 +22,8 @@ box = pv.Box(bounds=[
     body_length / 2,
     -body_width / 2,
     body_width / 2,
-    -body_height / 2,
-    body_height / 2,
+    0.0,
+    body_height,
 ])
 
 plotter.add_mesh(box, color="red")
