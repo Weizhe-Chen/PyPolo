@@ -8,6 +8,7 @@
 
 <img src="docs/assets/images/social/logo.svg" align="right" width="200" alt="header pic"/>
 
+
 ## What Is PyPolo? 🧐
 PyPolo is a Python library for Robotic Information Gathering (RIG) -- a robotics research area that aims to answer:
 
@@ -30,6 +31,8 @@ RIG has gained significant attention lately due to its broad range of applicatio
 An illustration of RIG's potential use case is an Autonomous Surface Vehicle (ASV) that efficiently constructs a precise underwater terrain map by actively gathering sonar measurements and minimizing uncertainty.
 
 <img src="docs/assets/images/framework/framework.png" width="70%"/>
+
+<img src="docs/assets/images/social/terrain_mapping.gif"  width="70%"/>
 
 ## Why Would I Use PyPolo? 🤷
 
