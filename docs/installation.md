@@ -37,6 +37,13 @@ If you have not installed `conda` or `mamba` yet, we recommend installing `mamba
     | --------|-----------------------|-----------|
     | Windows | x86_64                | [Mambaforge-Windows-x86_64](https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Windows-x86_64.exe) |
 
+Make the shell script executable, run the script, and follow the instructions to complete installation.
+For example, run the following code in a terminal on MacOS.
+
+```
+chmod +x ./Mambaforge-MacOSX-arm64.sh
+./Mambaforge-MacOSX-arm64.sh
+```
 
 !!! note "Why choose `mamba` over `conda`?"
 
