@@ -7,7 +7,8 @@ copyright: Copyright &copy; 2022 - 2023 PyPolo Developers
 nav:
   - Introduction: index.md
   - Installation: installation.md
-  - Get Started: get_started.md
+  - Tutorials:
+    - Gaussian Process Regression: tutorials/gaussian_process_regression.md
   - Resources:
     - Books: resources/books.md
     - Videos: resources/videos.md

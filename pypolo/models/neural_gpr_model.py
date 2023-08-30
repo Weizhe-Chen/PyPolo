@@ -11,13 +11,14 @@ from .base_model import BaseModel
 from .kernels import BaseKernel
 
 
-class GPRModel(BaseModel, nn.Module):
+class NeuralGPRModel(BaseModel, nn.Module):
 
     def __init__(self,
                  device_name,
                  kernel: BaseKernel,
                  noise: float,
                  lr_hyper: float = 0.01,
+                 lr_nn: float = 0.001,
                  jitter: float = 1e-6) -> None:
         r"""Gaussian Process Regression.
 
@@ -26,6 +27,7 @@ class GPRModel(BaseModel, nn.Module):
             kernel (BaseKernel): The kernel function.
             noise (float): The noise variance of the Gaussian likelihood.
             lr_hyper (float, optional): Learning rate of hyper-parameters.
+            lr_nn (float, optional): Learning rate of network parameters.
             jitter (float, optional): The jitter to add to the diagonal of the
                 covariance matrix. Defaults to 1e-6.
 
@@ -47,7 +49,7 @@ class GPRModel(BaseModel, nn.Module):
                     dtype=self.dtype,
                     device=self.device,
                 )))
-        self._init_optimizers(lr_hyper)
+        self._init_optimizers(lr_hyper, lr_nn)
         self.jitter = jitter
 
     def learn(self,
@@ -72,9 +74,13 @@ class GPRModel(BaseModel, nn.Module):
         progress_bar = tqdm(range(num_iter), disable=not verbose)
         for i in progress_bar:
             self.opt_hyper.zero_grad()
+            if self.opt_nn is not None:
+                self.opt_nn.zero_grad()
             loss = self._compute_loss()
             loss.backward()
             self.opt_hyper.step()
+            if self.opt_nn is not None:
+                self.opt_nn.step()
             progress_bar.set_description(
                 f"Iter: {i:02d} loss: {loss.item(): .2f}")
         self.eval()
@@ -278,16 +284,31 @@ class GPRModel(BaseModel, nn.Module):
         iK_y = torch.cholesky_solve(self.y_train, L, upper=False)
         return L, iK_y
 
-    def _init_optimizers(self, lr_hyper: float) -> None:
-        """Initialize optimizers for hyper-parameters.
+    def _init_optimizers(self, lr_hyper: float, lr_nn: float) -> None:
+        """Initialize optimizers for hyper-parameters and, optinally,
+        neural network parameters in non-stationary kernels.
 
         Args:
             lr_hyper (float, optional): Learning rate of hyper-parameters.
                 Defaults to 0.01.
+            lr_nn (float, optional): Learning rate of neural network parameters
+                in non-stationary kernels. Defaults to 0.001.
+
+        !!! note "Neural Network Parameters"
+
+            Neural network parameters are found by searching for the string
+            "nn" in the parameter name.
 
         """
-        self.lr_hyper = lr_hyper
-        hyper_params = []
+        self.lr_hyper, self.lr_nn = lr_hyper, lr_nn
+        hyper_params, nn_params = [], []
         for name, param in self.named_parameters():
-            hyper_params.append(param)
+            if "nn" in name:
+                nn_params.append(param)
+            else:
+                hyper_params.append(param)
         self.opt_hyper = torch.optim.Adam(hyper_params, lr=lr_hyper)
+        if nn_params:
+            self.opt_nn = torch.optim.Adam(nn_params, lr=lr_nn)
+        else:
+            self.opt_nn = None

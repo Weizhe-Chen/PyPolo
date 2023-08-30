@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 from typing import Tuple, Union
 
 import numpy as np
-from torch.utils.tensorboard.writer import SummaryWriter
 
 from ..utils import torch_utils
 
@@ -27,8 +26,7 @@ class BaseModel(ABC):
               x_new: np.ndarray,
               y_new: np.ndarray,
               num_iter: int,
-              verbose: bool = True,
-              writer: Union[SummaryWriter, None] = None) -> None:
+              verbose: bool = True) -> None:
         r"""Optimizes the model parameters.
 
         Args:
