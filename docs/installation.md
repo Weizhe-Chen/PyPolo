@@ -69,6 +69,7 @@ Now we can create a virtual environment for the PyPolo project:
 ## Install PyPolo
 
 ```
+mamba install -c conda-forge pyvista
 git clone https://github.com/Weizhe-Chen/PyPolo.git
 cd PyPolo
 pip install -e .

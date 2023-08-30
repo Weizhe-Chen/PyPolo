@@ -82,7 +82,6 @@ Please follow these guidelines when submitting code changes to the repository.
 
 ### Code Formatting
 
-- Use double quotes for string literals.
 - Use [yapf](https://github.com/google/yapf) to format the code.
 - Use [isort](https://pycqa.github.io/isort/) to sort the imports
 
@@ -103,14 +102,14 @@ Please follow these guidelines when submitting code changes to the repository.
 
 ### Code Quality
 
+- Write [pytest](https://docs.pytest.org/en/7.2.x/) unit tests for all code changes.
+- Use [pyright](https://github.com/microsoft/pyright) for static type checking.
 - Use comments to provide context and explain complex code.
 - Docstrings follow [Google style](https://google.github.io/styleguide/pyguide.html)
 - Write code that is easy to read and understand.
 - Write code that is easy to modify and maintain.
 - Avoid using global variables and functions.
-- Write [pytest](https://docs.pytest.org/en/7.2.x/) unit tests for all code changes.
 - Use type hints to improve readability and maintainability.
-- Use [pyright](https://github.com/microsoft/pyright) for static type checking.
 
 ### Exception Handling
 
@@ -140,8 +139,16 @@ Below is a summary of the development tools and their purposes.
 
 These tools can be installed by
 
-```bash
+```
 pip install -r requirements_dev.txt
 ```
 
 Following these guidelines will help us ensure that the PyPolo codebase remains consistent, maintainable, and of high quality.
+
+### Building Documentation Locally
+
+```
+mamba install lxml
+pip install -r docs/requirements.txt
+mkdocs serve
+```

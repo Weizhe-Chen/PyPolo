@@ -9,7 +9,6 @@ INSTALL_REQUIRES = [
     "tensorboard",
     "matplotlib",
     "tqdm",
-    "pyvista",
     "imageio-ffmpeg",
 ]
 
