@@ -86,6 +86,12 @@ If you would like to become a PyPolo developer and contribute to the project, pl
 
 ```
 pip install -r requirements_dev.txt
+mamba install lxml
+pip install -r docs/requirements.txt
 ```
 
-This command will install all the necessary dependencies needed for development specified in the `requirements_dev.txt` file.
+The documentation website can be launched locally via
+
+```
+mkdocs serve
+```
